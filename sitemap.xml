@@ -164,6 +164,13 @@
 
   
   <url>
+    <loc>http://example.com/tags/java/</loc>
+    <lastmod>2023-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Hexo/</loc>
     <lastmod>2023-04-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -177,14 +184,14 @@
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>http://example.com/tags/java/</loc>
+    <loc>http://example.com/categories/java/</loc>
     <lastmod>2023-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
-  
-
   
   <url>
     <loc>http://example.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
@@ -195,13 +202,6 @@
   
   <url>
     <loc>http://example.com/categories/linux/</loc>
-    <lastmod>2023-04-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/java/</loc>
     <lastmod>2023-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
