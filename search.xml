@@ -1,674 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>站点结构</title>
-    <url>/2023/04/24/%E7%AB%99%E7%82%B9%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>文章地图</title>
-    <url>/2023/04/24/%E6%96%87%E7%AB%A0%E5%9C%B0%E5%9B%BE/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>更新日志</title>
-    <url>/2023/04/24/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/2023/04/24/Devops/</url>
     <content><![CDATA[<h1 id="部署工具"><a href="#部署工具" class="headerlink" title="部署工具"></a>部署工具</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNzg0MjAzMw==">最棒的60个DevOps开源工具 - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>容器</title>
-    <url>/2023/04/24/%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
-<p>ubuntu 20.04</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># 配置阿里源</span><br><span class="line">sudo sed -i.bak <span class="string">&#x27;s/archive.ubuntu.com/mirrors.aliyun.com/g&#x27;</span> /etc/apt/sources.list</span><br><span class="line"># 更新软件源</span><br><span class="line">sudo apt update</span><br><span class="line"># 软件升级到最新</span><br><span class="line">sudo apt upgrade</span><br><span class="line"># 安装依赖</span><br><span class="line">sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common -y</span><br><span class="line"># 安装gpg证书</span><br><span class="line">curl -fsSL https:<span class="comment">//mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"># 写入软件源信息</span><br><span class="line">sudo add-apt-repository <span class="string">&quot;deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</span></span><br><span class="line"># 更新并安装docker-ce</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt -y install docker-ce</span><br><span class="line"># 测试安装是否成功</span><br><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h3 id="修改镜像为本地源–待定"><a href="#修改镜像为本地源–待定" class="headerlink" title="修改镜像为本地源–待定"></a>修改镜像为本地源–待定</h3><h4 id="修改镜像源为国内"><a href="#修改镜像源为国内" class="headerlink" title="修改镜像源为国内"></a>修改镜像源为国内</h4><p>/etc/docker/daemon.json 没有创建一个即可</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/docker/daemon.json </span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://tceq4jil.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#查看docker服务是否启动</span><br><span class="line">systemctl status docker</span><br><span class="line">#若未启动，则启动docker服务</span><br><span class="line">sudo systemctl start docker</span><br><span class="line">#重新启动docker服务</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line"># 设置开机启动docker</span><br><span class="line">sudo systemctl enable docker</span><br><span class="line"># 检查配置文件是否生效</span><br><span class="line">sudo docker info</span><br><span class="line"># 测试镜像源是否有效</span><br><span class="line">sudo docker pull nginx:latest</span><br><span class="line"># 镜像源测速</span><br><span class="line">sudo time docker pull nginx:latest</span><br></pre></td></tr></table></figure>
-
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zNDc2NDM2Njg=">Docker 国内镜像 - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC83MTY1ODA2Njk5NDYxMzc4MDg1">Docker Hub 镜像源 - 掘金 (juejin.cn)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMDk0MzMyL2FydGljbGUvZGV0YWlscy8xMDQwNzU1Mzk=">(119条消息) 2、linux下安装Docker教程并换成阿里云镜像仓库源_辰阳星宇的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h4 id="查找镜像"><a href="#查找镜像" class="headerlink" title="查找镜像"></a>查找镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker search softwarename</span><br><span class="line">docker search httpd</span><br></pre></td></tr></table></figure>
-
-<h4 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h4><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看nginx镜像版本</span></span><br><span class="line">sudo docker search nginx</span><br><span class="line"><span class="comment"># 获取nginx最新镜像</span></span><br><span class="line">sudo docker pull softwarename:latest</span><br></pre></td></tr></table></figure>
-
-<h4 id="列出镜像列表"><a href="#列出镜像列表" class="headerlink" title="列出镜像列表"></a>列出镜像列表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
-
-<h4 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker rmi 镜像名</span><br><span class="line">sudo docker rmi hello-world:latest</span><br></pre></td></tr></table></figure>
-
-<h4 id="创建镜像-–-待定"><a href="#创建镜像-–-待定" class="headerlink" title="创建镜像 – 待定"></a>创建镜像 – 待定</h4><p>镜像仓库的已经满足不了需求时</p>
-<h4 id="从已创建的容器中更新镜像，并且提交"><a href="#从已创建的容器中更新镜像，并且提交" class="headerlink" title="从已创建的容器中更新镜像，并且提交"></a>从已创建的容器中更新镜像，并且提交</h4><h4 id="使用Dockerfile来创建一个新镜像"><a href="#使用Dockerfile来创建一个新镜像" class="headerlink" title="使用Dockerfile来创建一个新镜像"></a>使用Dockerfile来创建一个新镜像</h4><h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">sudo docker <span class="keyword">run</span><span class="language-bash"> --name nginx-test4 -p 80:80 -d nginx</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><strong>–name nginx-test</strong>：容器名称。</p>
-</li>
-<li><p><strong>-p 8080:80</strong>： 端口进行映射，将本地 8080 端口映射到容器内部的 80 端口</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker开放80端口映射到本机的8080端口</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>-d nginx</strong>： 设置容器在在后台一直运行</p>
-</li>
-</ul>
-<h4 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h4 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker stop &lt;容器 ID&gt;/别名</span><br><span class="line">sudo docker stop nginx-test</span><br></pre></td></tr></table></figure>
-
-<h4 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker restart &lt;容器 ID&gt;/别名</span><br><span class="line">sudo docker restart nginx-test3</span><br></pre></td></tr></table></figure>
-
-<h4 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker exec &lt;容器 ID&gt;/别名</span><br><span class="line">sudo docker exec -it nginx-test3 /bin/bash</span><br><span class="line"># 退出容器</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>i：交互式</li>
-<li>t：指定bash</li>
-</ul>
-<h4 id="导入导出容器"><a href="#导入导出容器" class="headerlink" title="导入导出容器"></a>导入导出容器</h4><h5 id="导出-运行时可执行"><a href="#导出-运行时可执行" class="headerlink" title="导出-运行时可执行"></a>导出-运行时可执行</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker export &lt;容器 ID&gt;/别名 &gt; nginx.bak</span><br><span class="line">sudo docker export nginx-test3 &gt; nginx.bak</span><br></pre></td></tr></table></figure>
-
-<h5 id="导入容器快照"><a href="#导入容器快照" class="headerlink" title="导入容器快照"></a>导入容器快照</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cat nginx.bak |sudo docker import - test_nginx:v1</span><br><span class="line"># 查看镜像</span><br><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
-
-<p>通过指定 URL 或者某个目录来导入–没用过</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker import http://example.com/exampleimage.tgz example/imagerepo</span><br></pre></td></tr></table></figure>
-
-<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><p>容器必须是停止的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker rm -f &lt;容器 ID&gt;/别名 &gt;</span><br><span class="line">sudo docker rm -f nginx-test3</span><br></pre></td></tr></table></figure>
-
-<h3 id="docker实例"><a href="#docker实例" class="headerlink" title="docker实例"></a>docker实例</h3><h4 id="docker安装ubuntu"><a href="#docker安装ubuntu" class="headerlink" title="docker安装ubuntu"></a>docker安装ubuntu</h4><h4 id="docker安装nginx"><a href="#docker安装nginx" class="headerlink" title="docker安装nginx"></a>docker安装nginx</h4><h5 id="nginx安装"><a href="#nginx安装" class="headerlink" title="nginx安装"></a>nginx安装</h5><h5 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h5><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>Docker 官网：<span class="exturl" data-url="aHR0cHM6Ly93d3cuZG9ja2VyLmNvbS8=">https://www.docker.com<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vZW5naW5lLw==">https://docs.docker.com/engine/<i class="fa fa-external-link-alt"></i></span>)</p>
-<p>Github Docker 源码：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RvY2tlci9kb2NrZXItY2U=">https://github.com/docker/docker-ce<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9kb2NrZXIvZG9ja2VyLWFyY2hpdGVjdHVyZS5odG1s">Docker 架构 | 菜鸟教程 (runoob.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYWxpeXVuLmNvbS9taXJyb3IvP3NwbT1hMmM2aC4xMzY1MTEwMi4wLjAuM2UyMjFiMTFSUWVoc0Ymc2VydmljZVR5cGU9bWlycm9yJnRhZz0lRTUlQUUlQjklRTUlOTklQTg=">阿里巴巴开源镜像站-OPSX镜像站-阿里云开发者社区 (aliyun.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p>[(119条消息) Ubuntu20.04开放指定端口_ubuntu开放指定端口_梁云亮的博客-CSDN博客</p>
-<p><a href="https://blog.csdn.net/lianghecai52171314/article/details/113813826"><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xMzM0OTU5">Docker容器进入的4种方式(推荐最后一种) - 腾讯云开发者社区-腾讯云 (tencent.com)<i class="fa fa-external-link-alt"></i></span></a></p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-  </entry>
-  <entry>
-    <title>Hexo博客搭建</title>
-    <url>/2023/04/24/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<p><img data-src="https://images.weserv.nl/?url=https://raw.githubusercontent.com/zhizcy1003/typora_image/main/xxx.png&default=https://raw.githubusercontent.com/zhizcy1003/typora_image/main/xxx.png" alt="构建流程"></p>
-<h1 id="搭建基本Hexo博客"><a href="#搭建基本Hexo博客" class="headerlink" title="搭建基本Hexo博客"></a>搭建基本Hexo博客</h1><blockquote>
-<p>基础环境： win10 </p>
-</blockquote>
-<h2 id="线上环境配置"><a href="#线上环境配置" class="headerlink" title="线上环境配置"></a>线上环境配置</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25ldw==">创建仓库<i class="fa fa-external-link-alt"></i></span>  </p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">域名:github.com/<span class="attribute">zhizcy1003</span></span><br><span class="line">仓库名：yourname.github.io</span><br><span class="line">我自己：zhizcy1003.github.io  <span class="comment"># 下划线不支持</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="本地环境配置"><a href="#本地环境配置" class="headerlink" title="本地环境配置"></a>本地环境配置</h2><blockquote>
-<p>nodejs:  <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuLw==">node.js<i class="fa fa-external-link-alt"></i></span>        </p>
-<p>git:  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3dheWxhdS9naXQtZm9yLXdpbg==">git<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<p>有管理员权限的git bash环境下执行</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改npm源为淘宝源</span></span><br><span class="line"><span class="attribute">npm</span> config set registry https://registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置本地git环境</span></span><br><span class="line"><span class="variable">$git</span> config --global user.name <span class="string">&quot;zhizcy1003&quot;</span></span><br><span class="line"><span class="variable">$git</span> config --global user.email <span class="string">&quot;zhizcy1003<span class="variable">@qq</span>.com&quot;</span></span><br><span class="line"><span class="variable">$npm</span> install -g hexo-cli <span class="comment"># 安装hexo</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成key</span></span><br><span class="line"><span class="variable">$ssh</span>-keygen -t rsa -C <span class="string">&quot;Github的注册邮箱地址&quot;</span> <span class="comment"># 生成公钥</span></span><br><span class="line">Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub <span class="comment"># 复制所有内容到github add ssh key页面完成认证</span></span><br></pre></td></tr></table></figure>
-
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL3NzaA==">Add SSH key到github完成认证<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><blockquote>
-<p>/Desktop</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install -g hexo-cli <span class="comment"># 安装hexo</span></span><br><span class="line">hexo init blog <span class="comment"># 初始化一个hexo项目 备份到百度网盘同步空间，不用担心意外情况 # 需要开小飞机,从github源拉下来的,不开会连接失败</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="本地测试hexo服务"><a href="#本地测试hexo服务" class="headerlink" title="本地测试hexo服务"></a>本地测试hexo服务</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> clean <span class="comment"># 清理缓存</span></span><br><span class="line">hexo generate <span class="comment"># 生成静态文件</span></span><br><span class="line">hexo server <span class="comment"># 打开本地hexo服务</span></span><br></pre></td></tr></table></figure>
-
-<p>访问<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo0MDAwLw==">http://localhost:4000/<i class="fa fa-external-link-alt"></i></span></p>
-<blockquote>
-<p>补充：一键本地测试脚本</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">local_hexo_test.<span class="attribute">sh</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. local_hexo_test.<span class="attribute">sh</span>  <span class="comment"># 执行脚本</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="部署到线上环境"><a href="#部署到线上环境" class="headerlink" title="部署到线上环境"></a>部署到线上环境</h2><h3 id="修改主配"><a href="#修改主配" class="headerlink" title="修改主配"></a>修改主配</h3><blockquote>
-<p>/blog/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: <span class="attribute">git</span></span><br><span class="line">  repo: https://github.com/zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-deployer-git --save <span class="comment"># 解决deploy not found： git报错</span></span><br><span class="line">git config --global http.sslVerify <span class="literal">false</span> <span class="comment"># 解决at ChildProcess.emit (events.js:191:7)报错</span></span><br><span class="line"></span><br><span class="line">hexo clean <span class="comment"># 清除本地缓存</span></span><br><span class="line">hexo generate <span class="comment"># 生成静态文件</span></span><br><span class="line">hexo deploy <span class="comment"># 推送到github github会自动构建发布githubpage 第一次推送需要登陆认证</span></span><br></pre></td></tr></table></figure>
-
-<p>访问<span class="exturl" data-url="aHR0cHM6Ly96aGl6Y3lfMTAwMy5naXRodWIuaW8v">https://zhizcy_1003.github.io/<i class="fa fa-external-link-alt"></i></span></p>
-<blockquote>
-<p>补充:hexo一键部署脚本</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">remote_hexo_deploy.<span class="attribute">sh</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. remote_hexo_deploy.<span class="attribute">sh</span>  <span class="comment"># 执行脚本</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>部署到github的时候会出现延迟，因为github需要一个部署过程，所以需要等一会才能看到效果</p>
-</blockquote>
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9xd2VydHkyMDA2OTYuZ2l0aHViLmlvLzIwMTcvMDkvMDgvYmxvZ19zZXR1cC8jbW9yZQ==">Hexo+GitHub博客搭建实战 | wangwlj’s Blog (qwerty200696.github.io)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly96aGFuZ3Nsb2IuZ2l0aHViLmlvLzIwMTcvMDIvMjgvJUU2JTk1JTk5JUU0JUJEJUEwJUU1JTg1JThEJUU4JUI0JUI5JUU2JTkwJUFEJUU1JUJCJUJBJUU0JUI4JUFBJUU0JUJBJUJBJUU1JThEJTlBJUU1JUFFJUEyJUVGJUJDJThDSGV4by1HaXRodWIv">教你免费搭建个人博客，Hexo&amp;Github<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="配置Hexo更多功能"><a href="#配置Hexo更多功能" class="headerlink" title="配置Hexo更多功能"></a>配置Hexo更多功能</h1><h2 id="查看-版本信息"><a href="#查看-版本信息" class="headerlink" title="查看 版本信息"></a>查看 版本信息</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> -v</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/package.json的version</p>
-</blockquote>
-<h2 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">title: 测试所用博客</span><br><span class="line">subtitle: 测试</span><br><span class="line">description: 网页描述</span><br><span class="line">author: 测试</span><br><span class="line">language: zh-<span class="attribute">CN</span></span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
-
-<h2 id="更换hexo主题为next"><a href="#更换hexo主题为next" class="headerlink" title="更换hexo主题为next"></a>更换hexo主题为next</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">theme: <span class="attribute">next</span> <span class="comment"># 选择next主题</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">scheme: <span class="attribute">Pisces</span> <span class="comment"># 选择next主题模式</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. local_hexo_test.<span class="attribute">sh</span> <span class="comment"># 本地测试</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install --save hexo-excerpt</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml 添加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">auto_excerpt: </span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  length: <span class="number">150</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. local_hexo_test.<span class="attribute">sh</span> <span class="comment"># 本地测试</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">changyan:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  appid: cywD8vvrc</span><br><span class="line">  appkey: 1208ec59e1693128f587e4e6dabcbee1</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || <span class="attribute">fa</span> fa-home</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加分类页面</span></span><br><span class="line"><span class="attribute">hexo</span> new page <span class="string">&quot;categories&quot;</span></span><br><span class="line"><span class="comment"># 添加标签页面</span></span><br><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="comment"># 添加关于页面</span></span><br><span class="line">hexo new page <span class="string">&quot;about&quot;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>blog\source_posts\tags.md</p>
-<p>blog\source_posts\categories.md</p>
-<p>blog\source_posts\about.md</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2023-04-19 01:07:31</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2023-04-19 01:07:31</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br><span class="line">    </span><br><span class="line">---</span><br><span class="line">title: 关于</span><br><span class="line">date: 2023-04-19 01:07:31</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  total_visitors: <span class="literal">true</span></span><br><span class="line">  total_visitors_icon: fa fa-user</span><br><span class="line">  total_views: <span class="literal">true</span></span><br><span class="line">  total_views_icon: fa fa-eye</span><br><span class="line">  post_views: <span class="literal">true</span></span><br><span class="line">  post_views_icon: fa fa-eye   </span><br></pre></td></tr></table></figure>
-
-<h2 id="添加社交链接-暂定"><a href="#添加社交链接-暂定" class="headerlink" title="添加社交链接 - 暂定"></a>添加社交链接 - 暂定</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">本人qq 微信</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加友情链接"><a href="#添加友情链接" class="headerlink" title="添加友情链接"></a>添加友情链接</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Blog rolls</span></span><br><span class="line">links_settings:</span><br><span class="line">  icon: <span class="attribute">fa</span> fa-link</span><br><span class="line">  title: Links</span><br><span class="line">  <span class="comment"># Available values: block | inline</span></span><br><span class="line">  layout: block</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接改link即可</span></span><br><span class="line">links:</span><br><span class="line">  <span class="comment">#Title: http://yoursite.com</span></span><br><span class="line">  菜鸟教程: https://www.runoob.com/</span><br><span class="line">  编程宝库: http://www.codebaoku.com/</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
-
-<h2 id="显示每篇文章字数"><a href="#显示每篇文章字数" class="headerlink" title="显示每篇文章字数"></a>显示每篇文章字数</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-<span class="attribute">sa</span></span><br><span class="line">  sidebar: <span class="literal">true</span></span><br><span class="line">  post: <span class="literal">true</span></span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
-
-<h2 id="设置个人头像-–-待定"><a href="#设置个人头像-–-待定" class="headerlink" title="设置个人头像 – 待定"></a>设置个人头像 – 待定</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  url: /images/avatar.<span class="attribute">gif</span>   <span class="comment"># 把文件保存放在next/source/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  rounded: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  rotated: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="显示网站图标-暂定"><a href="#显示网站图标-暂定" class="headerlink" title="显示网站图标 - 暂定"></a>显示网站图标 - 暂定</h2><h2 id="添加留言板块"><a href="#添加留言板块" class="headerlink" title="添加留言板块"></a>添加留言板块</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> new page guestbook</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog\source\guestbook\index.md</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 留言板</span><br><span class="line">date: 2023-04-24 07:29:20</span><br><span class="line">type: &quot;guestbook&quot;</span><br><span class="line">---</span><br><span class="line"> &lt;<span class="attribute">div</span> class=<span class="string">&quot;ds-recent-visitors&quot;</span> data-num-items=<span class="string">&quot;28&quot;</span> data-avatar-size=<span class="string">&quot;42&quot;</span> id=<span class="string">&quot;ds-recent-visitors&quot;</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  schedule: /schedule/ || <span class="attribute">fa</span> fa-calendar</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  guestbook: /guestbook/ || fa fa-heartbeat <span class="comment"># 添加这个</span></span><br></pre></td></tr></table></figure>
-
-<p>hexo用的是awsome4的图标:<span class="exturl" data-url="aHR0cHM6Ly9mb250YXdlc29tZS5jb20vdjQvaWNvbi9hZGRyZXNzLWNhcmQtbw==">fa-address-card-o: Font Awesome Icons<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="修改文章底部的-号标签"><a href="#修改文章底部的-号标签" class="headerlink" title="修改文章底部的#号标签"></a>修改文章底部的#号标签</h2><blockquote>
-<p>/blog/themes/next/layout/_macro/post.swig</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">找到:rel=&quot;tag&quot;&gt;&#123;&#123; <span class="attribute">tag_indicate</span> &#125;&#125;  </span><br><span class="line">换为:rel=<span class="string">&quot;tag&quot;</span>&gt;&lt;i class=<span class="string">&quot;fa fa-tag&quot;</span>&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加动态背景"><a href="#添加动态背景" class="headerlink" title="添加动态背景"></a>添加动态背景</h2><blockquote>
-<p>只支持next 7.3.0+</p>
-<p>创建 /blog/source/_data/footer.swig </p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;<span class="attribute">script</span> color=<span class="string">&quot;0,0,255&quot;</span> opacity=<span class="string">&quot;0.5&quot;</span> zIndex=<span class="string">&quot;-1&quot;</span> count=<span class="string">&quot;99&quot;</span> src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line">custom_file_path:</span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  footer: source/_data/footer.<span class="attribute">swig</span>  <span class="comment"># 取消这个注释</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="comment">#style: source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="文章加密访问-暂定"><a href="#文章加密访问-暂定" class="headerlink" title="文章加密访问 - 暂定"></a>文章加密访问 - 暂定</h2><blockquote>
-<p>缺点：密码输入明文</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>文章字段添加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客配置</span><br><span class="line">date: 2023-04-18 07:09:03</span><br><span class="line">tags: </span><br><span class="line">	- <span class="attribute">hexo</span></span><br><span class="line">	- 未完成</span><br><span class="line">categories: 博客搭建</span><br><span class="line">password: password  <span class="comment"># 加这个字段</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加分享功能"><a href="#添加分享功能" class="headerlink" title="添加分享功能"></a>添加分享功能</h2><blockquote>
-<p> /blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">$ <span class="attribute">npm</span> install theme-next/hexo-next-share  <span class="comment"># 这个包下的特别慢</span></span><br><span class="line">$ npm install -g grunt </span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml 添加代码片段</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NeedMoreShare2</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-needmoreshare2</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/revir/need-more-share2</span></span><br><span class="line"><span class="comment"># iconStyle: default | box</span></span><br><span class="line"><span class="comment"># boxForm: horizontal | vertical</span></span><br><span class="line"><span class="comment"># position: top / middle / bottom + Left / Center / Right</span></span><br><span class="line"><span class="comment"># networks:</span></span><br><span class="line"><span class="comment"># Weibo | Wechat | Douban | QQZone | Twitter | Facebook | Linkedin | Mailto | Reddit | Delicious | StumbleUpon | Pinterest</span></span><br><span class="line"><span class="comment"># GooglePlus | Tumblr | GoogleBookmarks | Newsvine | Evernote | Friendfeed | Vkontakte | Odnoklassniki | Mailru</span></span><br><span class="line">needmoreshare:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  cdn:</span><br><span class="line">    js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@<span class="number">1</span>/needsharebutton.min.js</span><br><span class="line">    css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@<span class="number">1</span>/needsharebutton.min.css</span><br><span class="line">  postbottom:</span><br><span class="line">    enable: <span class="literal">true</span></span><br><span class="line">    options:</span><br><span class="line">      iconStyle: default</span><br><span class="line">      boxForm: horizontal</span><br><span class="line">      position: middle</span><br><span class="line">      networks: Wechat,QQZone,Weibo,Douban,Twitter,Facebook</span><br><span class="line">  float:</span><br><span class="line">    enable: <span class="literal">false</span></span><br><span class="line">    options:</span><br><span class="line">      iconStyle: default</span><br><span class="line">      boxForm: vertical</span><br><span class="line">      position: middle</span><br><span class="line">      networks: Wechat,QQZone,Weibo,Douban,Twitter,Facebook</span><br></pre></td></tr></table></figure>
-
-
-
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNzEyMzI4ODYvYXJ0aWNsZS9kZXRhaWxzLzEyMTIxMDA3Mg==">Hexo+NexT添加分享功能_小王同学w的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/_config.yml 添加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.<span class="attribute">xml</span></span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml  </p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line">local_search:</span><br><span class="line">  enable: <span class="attribute">true</span> </span><br><span class="line">  preload: <span class="literal">true</span>  </span><br></pre></td></tr></table></figure>
-
-<h2 id="设置代码高亮"><a href="#设置代码高亮" class="headerlink" title="设置代码高亮"></a>设置代码高亮</h2><blockquote>
-<p>/blog/theme/next/_config.yml  </p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  highlight_theme: <span class="attribute">night</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  copy_button:</span><br><span class="line">    enable: <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    show_result: <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    style: mac</span><br></pre></td></tr></table></figure>
-
-<h2 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>在需要置顶的文章的<code>Front-matter</code>中加上<code>top: true</code> 或者<code>top: 任意数字</code>,top中数字越大，文章越靠前</p>
-</blockquote>
-<p><strong>设置置顶图标</strong></p>
-<blockquote>
-<p>/themes/next/layout/_macro/post.swig</p>
-</blockquote>
-<p>在&lt;div class=”post-meta”&gt;的第一个&lt;span&gt;标签下，插入如下代码</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="attribute">if</span> post.top %&#125;</span><br><span class="line">    &lt;i class=<span class="string">&quot;fa fa-thumb-tack&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">    &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">    &lt;span class=<span class="string">&quot;post-meta-divider&quot;</span>&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% <span class="attribute">endif</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9hOTkyMmMzZWJiNjE=">Hexo nexT主题之文章置顶 - 简书 (jianshu.com)<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="开启打赏功能-暂定"><a href="#开启打赏功能-暂定" class="headerlink" title="开启打赏功能-暂定"></a>开启打赏功能-暂定</h2><h2 id="订阅微信公众号-暂定"><a href="#订阅微信公众号-暂定" class="headerlink" title="订阅微信公众号-暂定"></a>订阅微信公众号-暂定</h2><h2 id="萌妹看板娘"><a href="#萌妹看板娘" class="headerlink" title="萌妹看板娘"></a>萌妹看板娘</h2><blockquote>
-<p>/hexo/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/hexo/blog/theme/next/_config.yml   添加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span></span><br><span class="line">  <span class="literal">debug</span>: <span class="literal">false</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: <span class="number">150</span></span><br><span class="line">    height: <span class="number">300</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span></span><br><span class="line">  react:</span><br><span class="line">    opacity: <span class="number">0</span>.<span class="number">7</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0VZSE4vaGV4by1oZWxwZXItbGl2ZTJkL2Jsb2IvbWFzdGVyL1JFQURNRS56aC1DTi5tZA==">hexo-helper-live2d/README.zh-CN.md at master · EYHN/hexo-helper-live2d (github.com)<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="Cloudflare缓存图像"><a href="#Cloudflare缓存图像" class="headerlink" title="Cloudflare缓存图像"></a>Cloudflare缓存图像</h2><blockquote>
-<p>/hexo/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> i hexo-image-cloudflare</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25qemp6L2hleG8taW1hZ2UtY2xvdWRmbGFyZQ==">njzjz/hexo-image-cloudflare：使用 Cloudflare 在 Hexo 中缓存图像 (github.com)<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="添加右上角图标folk-github"><a href="#添加右上角图标folk-github" class="headerlink" title="添加右上角图标folk github"></a>添加右上角图标folk github</h2><blockquote>
-<p>/blog/theme/next/_config.yml  </p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line">github_banner:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  permalink: https://github.com/zhizcy1003</span><br><span class="line">  title: Follow me <span class="literal">on</span> GitHub</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加网站地图sitemap-后面百度推送用到"><a href="#添加网站地图sitemap-后面百度推送用到" class="headerlink" title="添加网站地图sitemap - 后面百度推送用到"></a>添加网站地图sitemap - 后面百度推送用到</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml 添加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 自动生成sitemap</span></span><br><span class="line">sitemap:</span><br><span class="line">  path: sitemap.<span class="attribute">xml</span></span><br><span class="line">baidusitemap:</span><br><span class="line">  path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
-
-<h2 id="压缩html，js文件"><a href="#压缩html，js文件" class="headerlink" title="压缩html，js文件"></a>压缩html，js文件</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-neat --save</span><br></pre></td></tr></table></figure>
-
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYS9hcnRpY2xlL2RldGFpbHMvMTA0MzI3NDk3">(119条消息) Hexo-neat插件优化提升访问效率_cungudafa的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<blockquote>
-<p>/blog/_config.yml 追加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-neat</span></span><br><span class="line"><span class="comment"># md博文压缩</span></span><br><span class="line">neat_enable: <span class="attribute">true</span></span><br><span class="line"><span class="comment"># 压缩html（ejs，swig等也属于html格式片段）</span></span><br><span class="line">neat_html:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  exclude:</span><br><span class="line"><span class="comment"># 压缩css  </span></span><br><span class="line">neat_css:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  exclude:</span><br><span class="line">    - <span class="string">&#x27;*.min.css&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/*.min.css&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;jquery.fancybox.min.css&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/live2d-widget/waifu.css&#x27;</span></span><br><span class="line"><span class="comment"># 压缩js</span></span><br><span class="line">neat_js:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  mangle: <span class="literal">true</span> <span class="comment">#打印日志</span></span><br><span class="line">  output:</span><br><span class="line">  compress:</span><br><span class="line">  exclude: <span class="comment">#排除文件</span></span><br><span class="line">    - <span class="string">&#x27;*.min.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/*.min.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;jquery.fancybox.min.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/live2d-widget/*.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/live2d-widget/*.min.js&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="添加网站运行时间"><a href="#添加网站运行时间" class="headerlink" title="添加网站运行时间"></a>添加网站运行时间</h2><blockquote>
-<p>\blog\themes\next\layout\_partials\footer.swig 末尾追加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;!-- 网站运行时间的设置 --&gt;</span><br><span class="line">&lt;<span class="attribute">span</span> id=<span class="string">&quot;timeDate&quot;</span>&gt;载入天数...&lt;/span&gt;</span><br><span class="line">&lt;span id=<span class="string">&quot;times&quot;</span>&gt;载入时分秒...&lt;/span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var now = new Date();</span><br><span class="line">    <span class="attribute">function</span> createtime() &#123;</span><br><span class="line">        <span class="attribute">var</span> grt= new Date(<span class="string">&quot;03/01/2023 10:00:00&quot;</span>); //此处修改你的建站时间或者网站上线时间</span><br><span class="line">        now.setTime(now.getTime()+250);</span><br><span class="line">        <span class="attribute">days</span> = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>; <span class="attribute">dnum</span> = Math.floor(days);</span><br><span class="line">        <span class="attribute">hours</span> = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - (<span class="number">24</span> * dnum); <span class="attribute">hnum</span> = Math.floor(hours);</span><br><span class="line">        if(String(hnum).<span class="attribute">length</span> ==<span class="number">1</span> )&#123;<span class="attribute">hnum</span> = <span class="string">&quot;0&quot;</span> + hnum;&#125; <span class="attribute">minutes</span> = (now - grt ) / <span class="number">1000</span> /<span class="number">60</span> - (<span class="number">24</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * hnum);</span><br><span class="line">        <span class="attribute">mnum</span> = Math.floor(minutes); if(String(mnum).<span class="attribute">length</span> ==<span class="number">1</span> )&#123;<span class="attribute">mnum</span> = <span class="string">&quot;0&quot;</span> + mnum;&#125;</span><br><span class="line">        <span class="attribute">seconds</span> = (now - grt ) / <span class="number">1000</span> - (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * <span class="number">60</span> * hnum) - (<span class="number">60</span> * mnum);</span><br><span class="line">        <span class="attribute">snum</span> = Math.round(seconds); if(String(snum).<span class="attribute">length</span> ==<span class="number">1</span> )&#123;<span class="attribute">snum</span> = <span class="string">&quot;0&quot;</span> + snum;&#125;</span><br><span class="line">        document.getElementById(&quot;timeDate&quot;).<span class="attribute">innerHTML</span> = <span class="string">&quot;&lt;br&gt;本站已安全运行 &quot;</span>+dnum+<span class="string">&quot; 天 &quot;</span>;</span><br><span class="line">        document.getElementById(&quot;times&quot;).<span class="attribute">innerHTML</span> = hnum + <span class="string">&quot; 小时 &quot;</span> + mnum + <span class="string">&quot; 分 &quot;</span> + snum + <span class="string">&quot; 秒.&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">setInterval(&quot;createtime()&quot;,250);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用base64加密和解密外部链接"><a href="#使用base64加密和解密外部链接" class="headerlink" title="使用base64加密和解密外部链接"></a>使用base64加密和解密外部链接</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">exturl: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="启用百度推送"><a href="#启用百度推送" class="headerlink" title="启用百度推送"></a>启用百度推送</h2><blockquote>
-<p>先验证网站：<span class="exturl" data-url="aHR0cHM6Ly96aXl1YW4uYmFpZHUuY29tL3NpdGU=">https://ziyuan.baidu.com/site<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">baidu_push: true</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>themes\next\layout_scripts\baidu_push.swig（没有这个文件则创建），添加以下代码</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="attribute">if</span> theme.baidu_push %&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">(function()&#123;</span><br><span class="line">    <span class="attribute">var</span> bp = document.createElement(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">    <span class="attribute">var</span> curProtocol = window.location.protocol.split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="attribute">if</span> (curProtocol === <span class="string">&#x27;https&#x27;</span>) &#123;</span><br><span class="line">        bp.<span class="attribute">src</span> = <span class="string">&#x27;https://zz.bdstatic.com/linksubmit/push.js&#x27;</span>;        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="section">else</span> &#123;</span><br><span class="line">        bp.<span class="attribute">src</span> = <span class="string">&#x27;http://push.zhanzhang.baidu.com/push.js&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">var</span> s = document.getElementsByTagName(<span class="string">&quot;script&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">    s.parentNode.insertBefore(bp, s);</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&#123;% <span class="attribute">endif</span> %&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2J5dGVzdHVkaW8vYXJ0aWNsZS9kZXRhaWxzLzEyNTkyMjM2Mw==">https://blog.csdn.net/bytestudio/article/details/125922363<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="黑夜模式"><a href="#黑夜模式" class="headerlink" title="黑夜模式"></a>黑夜模式</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">darkmode: true</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cudGVjaGdyb3cuY24vcG9zdHMvYWJmNGFlZTEuaHRtbCNXYWxpbmUtJUU4JUFGJTg0JUU4JUFFJUJBJUU3JUIzJUJCJUU3JUJCJTlG">Hexo Next 8.x 主题添加可切换的暗黑模式 | Clay 的技术博客 (techgrow.cn)<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="开启聊天-–-待定"><a href="#开启聊天-–-待定" class="headerlink" title="开启聊天 – 待定"></a>开启聊天 – 待定</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">chat:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  service: chatra</span><br><span class="line">  <span class="comment">#service: tidio</span></span><br><span class="line">  icon: fa fa-comment <span class="comment"># Icon name in Font Awesome, set false to disable icon.</span></span><br><span class="line">  text: Chat <span class="comment"># Button text, change it as you wish.</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="开启书签支持-–-暂定"><a href="#开启书签支持-–-暂定" class="headerlink" title="开启书签支持 – 暂定"></a>开启书签支持 – 暂定</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">bookmark:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="开启ajax导航"><a href="#开启ajax导航" class="headerlink" title="开启ajax导航"></a>开启ajax导航</h2><blockquote>
-<p>/blog/themes/next</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-pjax source/lib/pjax</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="图像缩放"><a href="#图像缩放" class="headerlink" title="图像缩放"></a>图像缩放</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">fancybox: true</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-fancybox source/lib/fancybox    <span class="comment"># install Fancybox 2.x</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">lazyload: true</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-jquery-lazyload source/lib/jquery_lazyload</span><br></pre></td></tr></table></figure>
-
-<h2 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h2><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-related-popular-posts --save</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">related_posts:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章阅读进度显示"><a href="#文章阅读进度显示" class="headerlink" title="文章阅读进度显示"></a>文章阅读进度显示</h2><blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  sidebar: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="页面顶部进度条"><a href="#页面顶部进度条" class="headerlink" title="页面顶部进度条"></a>页面顶部进度条</h2><blockquote>
-<p>/blog/theme/next</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-reading-progress source/lib/reading_progress</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line">reading_progress:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  position: top</span><br><span class="line">  color: <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  height: 3px</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章页面加载进度条"><a href="#文章页面加载进度条" class="headerlink" title="文章页面加载进度条"></a>文章页面加载进度条</h2><blockquote>
-<p>不推荐，国内手机浏览动画会停留</p>
-</blockquote>
-<blockquote>
-<p>/blog/theme/next</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-pace source/lib/pace</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  theme: center-radar</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加点击爱心效果"><a href="#添加点击爱心效果" class="headerlink" title="添加点击爱心效果"></a>添加点击爱心效果</h2><blockquote>
-<p>/blog/theme/next/source/js/clicklove.js  创建clicklove.js</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">!function(e,t,a)&#123;<span class="attribute">function</span> n()&#123;c(&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: <span class="comment">#f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &#x27;&#x27;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;),o(),r()&#125;function r()&#123;for(var e=0;e&lt;d.length;e++)d[e].alpha&lt;=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText=&quot;left:&quot;+d[e].x+&quot;px;top:&quot;+d[e].y+&quot;px;opacity:&quot;+d[e].alpha+&quot;;transform:scale(&quot;+d[e].scale+&quot;,&quot;+d[e].scale+&quot;) rotate(45deg);background:&quot;+d[e].color+&quot;;z-index:99999&quot;);requestAnimationFrame(r)&#125;function o()&#123;var t=&quot;function&quot;==typeof e.onclick&amp;&amp;e.onclick;e.onclick=function(e)&#123;t&amp;&amp;t(),i(e)&#125;&#125;function i(e)&#123;var a=t.createElement(&quot;div&quot;);a.className=&quot;heart&quot;,d.push(&#123;el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()&#125;),t.body.appendChild(a)&#125;function c(e)&#123;var a=t.createElement(&quot;style&quot;);a.type=&quot;text/css&quot;;try&#123;a.appendChild(t.createTextNode(e))&#125;catch(t)&#123;a.styleSheet.cssText=e&#125;t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a)&#125;function s()&#123;return&quot;rgb(&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;)&quot;&#125;var d=[];e.requestAnimationFrame=function()&#123;return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e)&#123;setTimeout(e,1e3/60)&#125;&#125;(),n()&#125;(window,document);</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/layout/_layout.swig 追加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt; &lt;<span class="attribute">script</span> type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;/js/clicklove.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="日历-–待定"><a href="#日历-–待定" class="headerlink" title="日历 –待定"></a>日历 –待定</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><blockquote>
-<p>themes\next\layout\_macro\sidebar.swig<code>找到</code>sidebar-inner</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;<span class="attribute">aside</span> class=<span class="string">&quot;sidebar&quot;</span>&gt;</span><br><span class="line"> &lt;div class=<span class="string">&quot;sidebar-inner&quot;</span>&gt; //从下面开始复制，粘贴到这里</span><br><span class="line">  &lt;!--网易云插件--&gt;</span><br><span class="line">&lt;iframe frameborder=<span class="string">&quot;no&quot;</span> border=<span class="string">&quot;0&quot;</span> marginwidth=<span class="string">&quot;0&quot;</span> marginheight=<span class="string">&quot;0&quot;</span> width=<span class="number">298</span> height=<span class="number">52</span> src=<span class="string">&quot;//music.163.com/outchain/player?type=0&amp;id=8144103265&amp;auto=1&amp;height=32&quot;</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/theme/next/_config.yml 添加</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">music:</span><br><span class="line">	enable: <span class="attribute">true</span></span><br><span class="line">	autoplay: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1F4aWFvZmVpXy9hcnRpY2xlL2RldGFpbHMvMTIzMDcyNjEw">(119条消息) 【Hexo】Next主题添加全局播放翻页不间断的网易云音乐_Q大帅的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="pdf展示–待定"><a href="#pdf展示–待定" class="headerlink" title="pdf展示–待定"></a>pdf展示–待定</h2><blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cueW91c2F6b2UudG9wL2FyY2hpdmVzL2MxMmM5YzQwLmh0bWw=">Hexo-NexT 博客使用插件总结 | Fl0w3r (yousazoe.top)<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h2 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h2><h1 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h1><h2 id="生成模板"><a href="#生成模板" class="headerlink" title="生成模板"></a>生成模板</h2><h3 id="新建文章模板修改"><a href="#新建文章模板修改" class="headerlink" title="新建文章模板修改"></a>新建文章模板修改</h3><p>我们可以修改一下文章模板，可以将<code>/scaffolds/post.md</code>修改为如下代码</p>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; <span class="attribute">title</span> &#125;&#125; </span><br><span class="line">date: &#123;&#123; <span class="attribute">date</span> &#125;&#125;</span><br><span class="line">author: </span><br><span class="line">img: </span><br><span class="line">coverImg: </span><br><span class="line">top: <span class="literal">false</span></span><br><span class="line">cover: <span class="literal">false</span></span><br><span class="line">toc: <span class="literal">true</span></span><br><span class="line">mathjax: <span class="literal">false</span></span><br><span class="line">password:</span><br><span class="line">summary:</span><br><span class="line">keywords:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>解读</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: typora-vue-theme主题介绍 <span class="comment"># 文章标题</span></span><br><span class="line">date: 2018-09-07 09:25:00  <span class="comment"># 发布时间，强烈建议填写此选项，且最好保证全局唯一</span></span><br><span class="line">author: 赵奇 <span class="comment"># 文章作者</span></span><br><span class="line">img: /source/images/xxx.<span class="attribute">jpg</span>  <span class="comment"># 文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: http://xxx.com/xxx.jpg</span></span><br><span class="line">top: <span class="literal">true</span> <span class="comment"># 推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</span></span><br><span class="line">cover: <span class="literal">true</span>  <span class="comment"># v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</span></span><br><span class="line">coverImg: /images/<span class="number">1</span>.jpg <span class="comment"># 版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</span></span><br><span class="line">password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92 <span class="comment"># 文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</span></span><br><span class="line">toc: <span class="literal">true</span> <span class="comment"># 是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</span></span><br><span class="line">mathjax: <span class="literal">false</span>  <span class="comment"># 是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</span></span><br><span class="line">summary: <span class="comment"># 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</span></span><br><span class="line">categories: Markdown <span class="comment"># 文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</span></span><br><span class="line">tags:  <span class="comment"># 文章标签，一篇文章可以多个标签</span></span><br><span class="line">  - Typora </span><br><span class="line">  - Markdown</span><br><span class="line">keywords: 文章关键字，SEO 时需要</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><blockquote>
-<p>/blog</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> new <span class="string">&quot;测试文章&quot;</span> <span class="comment"># 生成blog\source\_posts\测试文章.md</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1YXNoaWppZGV4aWJhby9hcnRpY2xlL2RldGFpbHMvMTEyOTcxNjU3P3NwbT0xMDAxLjIwMTQuMzAwMS41NTAy">(119条消息) Hexo-Matery主题细致美化_http s://ww w.7j2 7z12l.co_marma1ade的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="markdown编辑器"><a href="#markdown编辑器" class="headerlink" title="markdown编辑器"></a>markdown编辑器</h2><h3 id="typaro"><a href="#typaro" class="headerlink" title="typaro"></a>typaro</h3><blockquote>
-<p>typaro插入图片上传到github</p>
-</blockquote>
-<h4 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h4><h4 id="typaro设置"><a href="#typaro设置" class="headerlink" title="typaro设置"></a>typaro设置</h4><h4 id="pico插件"><a href="#pico插件" class="headerlink" title="pico插件"></a>pico插件</h4><h4 id="上传失败总结"><a href="#上传失败总结" class="headerlink" title="上传失败总结"></a>上传失败总结</h4><blockquote>
-<p>重复上传,文件重名</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">修改本地文件名重传</span><br></pre></td></tr></table></figure>
-
-
-
-<p>参考：</p>
-<blockquote>
-<p>markdown语法</p>
-</blockquote>
-<p>参考：</p>
-<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="国内coding托管"><a href="#国内coding托管" class="headerlink" title="国内coding托管"></a>国内coding托管</h2><h3 id="线上配置"><a href="#线上配置" class="headerlink" title="线上配置"></a>线上配置</h3><h3 id="线下配置"><a href="#线下配置" class="headerlink" title="线下配置"></a>线下配置</h3><blockquote>
-<p>验证公钥</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@e</span>.coding.net</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>/blog/_config.yml</p>
-</blockquote>
-<blockquote>
-<p>用ssh链接基于公钥，用https基于账号密码</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  - type: <span class="attribute">git</span></span><br><span class="line">    repo: git<span class="variable">@github</span>.com:zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">    branch: master</span><br><span class="line">  - type: git</span><br><span class="line">    repo: git<span class="variable">@e</span>.coding.net:python-yu/zhizcy1003/zhizcy1003.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Jsb3dNb29ucy9hcnRpY2xlL2RldGFpbHMvMTAwNTQ0NDQ0">(119条消息) Hexo部署到Coding上_乡草的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cudm9pZGtpbmcuY29tL2Rldi1oZXhvLW11bHRpLWdpdC8=">Hexo配置多个git仓库 | 好好学习的郝 (voidking.com)<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
-<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMzYxNjQ4MQ==">Hexo搭建的GitHub博客之优化大全 - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span>–老版本的需要查看对应版本的hexo配置–全面–主要使用</p>
-<p><span class="exturl" data-url="aHR0cDovL3RoZW1lLW5leHQuaWlzc25hbi5jb20vdGhlbWUtc2V0dGluZ3MuaHRtbA==">主题配置 - NexT 使用文档 (iissnan.com)<i class="fa fa-external-link-alt"></i></span>–主要使用–中文</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">文档 |下一个 (theme-next.js.org)<i class="fa fa-external-link-alt"></i></span>–配合上面使用-英文</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVqb2tlcl83L2FydGljbGUvZGV0YWlscy8xMjMyMzU2ODc=">hexo中next主题7.8版本设置阅读全文_hexo next 7.8_JiangPengCode的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly91eGF3c2VueS5naXRodWIuaW8vMjAyMS8wNy8yNS9IZXhvJUU2JTk2JUIwJUU3JTg5JTg4JUU2JTlDJUFDJUU0JUI4JThFJUU2JTk2JUIwJUU3JTg5JTg4JUU2JTlDJUFDbmV4dCVFNSVBRSU4OSVFOCVBMyU4NSVFOSU4NSU4RCVFNyVCRCVBRSVFNSVBRSU4QyVFNiU5NSVCNCVFNiVCNSU4MSVFNyVBOCU4QiglRTYlOEMlODElRTclQkIlQUQlRTYlOUIlQjQlRTYlOTYlQjA=">Hexo新版与新版本next安装配置完整流程(持续更新) | uxawseny<i class="fa fa-external-link-alt"></i></span> /)–这个针对新版也很宝藏</p>
-<p>[Hexo+Next主题优化 - 知乎 (zhihu.com)](<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMDgzNjQzNiM=">https://zhuanlan.zhihu.com/p/30836436#<i class="fa fa-external-link-alt"></i></span> 设置菜单项的显示文本和图标)–主题美化</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzMwOTExMjU4">hexo上有什么好玩的插件？ - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly91cHdub3RoaW5nLmdpdGh1Yi5pby96aC1DTi80NGJmOGRlZi8jJUU2JUI3JUJCJUU1JThBJUEwJUU3JTlCJUI4JUU1JTg1JUIzJUU2JTk2JTg3JUU3JUFCJUEwJUU2JThFJUE4JUU4JThEJTkwJUU1JThBJTlGJUU4JTgzJUJE">Hexo + NexT 深度个性化配置 (2020.1 更新) | UPWNothing’s Playground<i class="fa fa-external-link-alt"></i></span>–深度ok</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9maW5pc2t5LmdpdGh1Yi5pby8=">Finisky Garden<i class="fa fa-external-link-alt"></i></span>–这个美化做的很强</p>
-</blockquote>
-<h1 id="优秀博客"><a href="#优秀博客" class="headerlink" title="优秀博客"></a>优秀博客</h1><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaWRlZnVuLmNvbS9hYm91dC8=">关于 | IdeFun<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9rYWlib3NoaS5naXRlZS5pby8=">Kaiboshiの博客 (gitee.io)<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">主要看程序版本</span><br><span class="line"></span><br><span class="line">主程序官网文档完善</span><br><span class="line">插件文档完善</span><br><span class="line">配置文件参考链接完善 - 最好直接链接到github非常方便</span><br><span class="line"></span><br><span class="line">查资料一定要带上  版本+问题  去查</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">最快打开功能：直接看配置文件怎么说明的</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>博客搭建</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E8%AF%AD%E8%A8%80/</url>
-    <content><![CDATA[<h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1>]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E5%B7%A5%E5%85%B7/</url>
-    <content><![CDATA[<h1 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h1><h2 id="typaro"><a href="#typaro" class="headerlink" title="typaro"></a>typaro</h2><h3 id="上传图片到github"><a href="#上传图片到github" class="headerlink" title="上传图片到github"></a>上传图片到github</h3><h1 id="绘制流程图"><a href="#绘制流程图" class="headerlink" title="绘制流程图"></a>绘制流程图</h1><h2 id="商业"><a href="#商业" class="headerlink" title="商业"></a>商业</h2><h3 id="processon"><a href="#processon" class="headerlink" title="processon"></a>processon</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9oaXN0b3J5">ProcessOn - 我的文件<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h2><blockquote>
-<p>Github项目地址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2pncmFwaA==">https://github.com/jgraph<i class="fa fa-external-link-alt"></i></span></p>
-</blockquote>
-<h3 id="draw-io"><a href="#draw-io" class="headerlink" title="draw.io"></a>draw.io</h3><ul>
-<li>浏览器</li>
-</ul>
-<p><span class="exturl" data-url="aHR0cHM6Ly9hcHAuZGlhZ3JhbXMubmV0Lw==">diagrams.net<i class="fa fa-external-link-alt"></i></span></p>
-<ul>
-<li>桌面端</li>
-</ul>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2pncmFwaC9kcmF3aW8tZGVza3RvcC9yZWxlYXNlcw==">https://github.com/jgraph/drawio-desktop/releases<i class="fa fa-external-link-alt"></i></span></p>
-<ul>
-<li>docker私有部署</li>
-</ul>
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpblJDTk4vYXJ0aWNsZS9kZXRhaWxzLzEyMDY0MTU4MA==">(119条消息) 安利个开源免费流程图应用Draw.io/diagrams，告别Visio/ProcessOn_开源流程图_浮肿前行的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="远程桌面控制"><a href="#远程桌面控制" class="headerlink" title="远程桌面控制"></a>远程桌面控制</h1><h2 id="vnc"><a href="#vnc" class="headerlink" title="vnc"></a>vnc</h2><h1 id="Ide"><a href="#Ide" class="headerlink" title="Ide"></a>Ide</h1><h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><h3 id="语言支持"><a href="#语言支持" class="headerlink" title="语言支持"></a>语言支持</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># java 语言支持 - 需要先下载jdk 并配置好环境变量</span></span><br><span class="line"><span class="attribute">Extension</span> Pack for Java <span class="comment"># java支持扩展包</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python 支持</span></span><br><span class="line">Python</span><br><span class="line"><span class="comment"># jupyter 支持</span></span><br><span class="line">Jupyter</span><br><span class="line"></span><br><span class="line"><span class="comment"># html css支持</span></span><br><span class="line">HTML CSS Support</span><br><span class="line"><span class="comment"># React支持</span></span><br><span class="line">ES7+ React/Redux/React-Native snippets</span><br><span class="line"><span class="comment"># vue支持</span></span><br><span class="line">Vue Language Features </span><br><span class="line"></span><br><span class="line"><span class="comment"># Go 支持</span></span><br><span class="line">Go</span><br><span class="line"></span><br><span class="line"><span class="comment"># PHP 支持</span></span><br><span class="line">PHP Intelephense</span><br><span class="line"></span><br><span class="line"><span class="comment"># rust支持</span></span><br><span class="line">rust-analyzer</span><br></pre></td></tr></table></figure>
-
-<h3 id="编码支持"><a href="#编码支持" class="headerlink" title="编码支持"></a>编码支持</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># gpt3的ai编码支持 - 一直报错连不上服务器 - 待定</span><br><span class="line">GitHub Copilot</span><br></pre></td></tr></table></figure>
-
-<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 微软浏览器支持 - 需要先安装微软浏览器的某个版本</span></span><br><span class="line"><span class="attribute">Microsoft</span> Edge Tools for VS Code</span><br><span class="line"><span class="comment"># 调试火狐浏览器</span></span><br><span class="line">Debugger for Firefox</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="容器支持-–-插件过于复杂–不建议"><a href="#容器支持-–-插件过于复杂–不建议" class="headerlink" title="容器支持 – 插件过于复杂–不建议"></a>容器支持 – 插件过于复杂–不建议</h3><p>建议：在虚拟机里跑，用vscode bash终端进行控制，用插件简直浪费时间</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Docker 支持 - win建议先下载docker桌面，插件自动安装很慢</span><br><span class="line">Docker</span><br></pre></td></tr></table></figure>
-
-<h3 id="markdown支持"><a href="#markdown支持" class="headerlink" title="markdown支持"></a>markdown支持</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">markdownlint</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码阅读支持"><a href="#代码阅读支持" class="headerlink" title="代码阅读支持"></a>代码阅读支持</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GitLens — Git supercharged</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="语言包支持"><a href="#语言包支持" class="headerlink" title="语言包支持"></a>语言包支持</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">chainese</span> </span><br></pre></td></tr></table></figure>
-
-<h3 id="linux远程管理"><a href="#linux远程管理" class="headerlink" title="linux远程管理"></a>linux远程管理</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Remote</span> Development</span><br></pre></td></tr></table></figure>
-
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ5MDQxNC9hcnRpY2xlL2RldGFpbHMvMTE3NzUwMDc1">(119条消息) VSCode - 使用VSCode远程连接到Linux并实现免密码登录_vscode远程连接linux_insight^tkk的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h3 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h3><h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNzg0MjAzMw==">最棒的60个DevOps开源工具 - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E5%BA%93/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E8%84%9A%E6%9C%AC/</url>
-    <content><![CDATA[<h1 id="win10下启动多个应用-java实现"><a href="#win10下启动多个应用-java实现" class="headerlink" title="win10下启动多个应用-java实现"></a>win10下启动多个应用-java实现</h1><blockquote>
-<p>ide运行java脚本</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">startApp</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException  &#123;</span><br><span class="line">		openExe();</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">openExe</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files\\baidu-translate-client\\百度翻译.exe&quot;</span>);                   </span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files\\Typora\\Typora.exe&quot;</span>);  </span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe&quot;</span>);</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files (x86)\\Tencent\\QQMusic\\QQMusic.exe&quot;</span>);</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Windows\\system32\\SnippingTool.exe&quot;</span>);</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files\\draw.io\\draw.io.exe&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpZGlodW8vYXJ0aWNsZS9kZXRhaWxzLzUwMTQzNTU3">(119条消息) java打开指定文件（运行指定程序exe）_四滴火的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDEwNzMwL2FydGljbGUvZGV0YWlscy85MTk5NTg1MQ==">(119条消息) 【JAVA】Win10实现Java文件的开机自启动（附详细步骤）_Yngz_Miao的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2>]]></content>
   </entry>
   <entry>
     <title>java</title>
@@ -2120,6 +1456,515 @@ System.out.println(&quot;b = &quot; + b);
       </tags>
   </entry>
   <entry>
+    <title>Hexo博客搭建</title>
+    <url>/2023/04/24/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p><img data-src="https://images.weserv.nl/?url=https://raw.githubusercontent.com/zhizcy1003/typora_image/main/xxx.png&default=https://raw.githubusercontent.com/zhizcy1003/typora_image/main/xxx.png" alt="构建流程"></p>
+<h1 id="搭建基本Hexo博客"><a href="#搭建基本Hexo博客" class="headerlink" title="搭建基本Hexo博客"></a>搭建基本Hexo博客</h1><blockquote>
+<p>基础环境： win10 </p>
+</blockquote>
+<h2 id="线上环境配置"><a href="#线上环境配置" class="headerlink" title="线上环境配置"></a>线上环境配置</h2><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25ldw==">创建仓库<i class="fa fa-external-link-alt"></i></span>  </p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">域名:github.com/<span class="attribute">zhizcy1003</span></span><br><span class="line">仓库名：yourname.github.io</span><br><span class="line">我自己：zhizcy1003.github.io  <span class="comment"># 下划线不支持</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="本地环境配置"><a href="#本地环境配置" class="headerlink" title="本地环境配置"></a>本地环境配置</h2><blockquote>
+<p>nodejs:  <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL2VuLw==">node.js<i class="fa fa-external-link-alt"></i></span>        </p>
+<p>git:  <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3dheWxhdS9naXQtZm9yLXdpbg==">git<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<p>有管理员权限的git bash环境下执行</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改npm源为淘宝源</span></span><br><span class="line"><span class="attribute">npm</span> config set registry https://registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置本地git环境</span></span><br><span class="line"><span class="variable">$git</span> config --global user.name <span class="string">&quot;zhizcy1003&quot;</span></span><br><span class="line"><span class="variable">$git</span> config --global user.email <span class="string">&quot;zhizcy1003<span class="variable">@qq</span>.com&quot;</span></span><br><span class="line"><span class="variable">$npm</span> install -g hexo-cli <span class="comment"># 安装hexo</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成key</span></span><br><span class="line"><span class="variable">$ssh</span>-keygen -t rsa -C <span class="string">&quot;Github的注册邮箱地址&quot;</span> <span class="comment"># 生成公钥</span></span><br><span class="line">Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub <span class="comment"># 复制所有内容到github add ssh key页面完成认证</span></span><br></pre></td></tr></table></figure>
+
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL3NzaA==">Add SSH key到github完成认证<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><blockquote>
+<p>/Desktop</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install -g hexo-cli <span class="comment"># 安装hexo</span></span><br><span class="line">hexo init blog <span class="comment"># 初始化一个hexo项目 备份到百度网盘同步空间，不用担心意外情况 # 需要开小飞机,从github源拉下来的,不开会连接失败</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="本地测试hexo服务"><a href="#本地测试hexo服务" class="headerlink" title="本地测试hexo服务"></a>本地测试hexo服务</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> clean <span class="comment"># 清理缓存</span></span><br><span class="line">hexo generate <span class="comment"># 生成静态文件</span></span><br><span class="line">hexo server <span class="comment"># 打开本地hexo服务</span></span><br></pre></td></tr></table></figure>
+
+<p>访问<span class="exturl" data-url="aHR0cDovL2xvY2FsaG9zdDo0MDAwLw==">http://localhost:4000/<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>补充：一键本地测试脚本</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">local_hexo_test.<span class="attribute">sh</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. local_hexo_test.<span class="attribute">sh</span>  <span class="comment"># 执行脚本</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="部署到线上环境"><a href="#部署到线上环境" class="headerlink" title="部署到线上环境"></a>部署到线上环境</h2><h3 id="修改主配"><a href="#修改主配" class="headerlink" title="修改主配"></a>修改主配</h3><blockquote>
+<p>/blog/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: <span class="attribute">git</span></span><br><span class="line">  repo: https://github.com/zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-deployer-git --save <span class="comment"># 解决deploy not found： git报错</span></span><br><span class="line">git config --global http.sslVerify <span class="literal">false</span> <span class="comment"># 解决at ChildProcess.emit (events.js:191:7)报错</span></span><br><span class="line"></span><br><span class="line">hexo clean <span class="comment"># 清除本地缓存</span></span><br><span class="line">hexo generate <span class="comment"># 生成静态文件</span></span><br><span class="line">hexo deploy <span class="comment"># 推送到github github会自动构建发布githubpage 第一次推送需要登陆认证</span></span><br></pre></td></tr></table></figure>
+
+<p>访问<span class="exturl" data-url="aHR0cHM6Ly96aGl6Y3lfMTAwMy5naXRodWIuaW8v">https://zhizcy_1003.github.io/<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>补充:hexo一键部署脚本</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">remote_hexo_deploy.<span class="attribute">sh</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. remote_hexo_deploy.<span class="attribute">sh</span>  <span class="comment"># 执行脚本</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>部署到github的时候会出现延迟，因为github需要一个部署过程，所以需要等一会才能看到效果</p>
+</blockquote>
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9xd2VydHkyMDA2OTYuZ2l0aHViLmlvLzIwMTcvMDkvMDgvYmxvZ19zZXR1cC8jbW9yZQ==">Hexo+GitHub博客搭建实战 | wangwlj’s Blog (qwerty200696.github.io)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aGFuZ3Nsb2IuZ2l0aHViLmlvLzIwMTcvMDIvMjgvJUU2JTk1JTk5JUU0JUJEJUEwJUU1JTg1JThEJUU4JUI0JUI5JUU2JTkwJUFEJUU1JUJCJUJBJUU0JUI4JUFBJUU0JUJBJUJBJUU1JThEJTlBJUU1JUFFJUEyJUVGJUJDJThDSGV4by1HaXRodWIv">教你免费搭建个人博客，Hexo&amp;Github<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="配置Hexo更多功能"><a href="#配置Hexo更多功能" class="headerlink" title="配置Hexo更多功能"></a>配置Hexo更多功能</h1><h2 id="查看-版本信息"><a href="#查看-版本信息" class="headerlink" title="查看 版本信息"></a>查看 版本信息</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> -v</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/package.json的version</p>
+</blockquote>
+<h2 id="修改网站相关信息"><a href="#修改网站相关信息" class="headerlink" title="修改网站相关信息"></a>修改网站相关信息</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">title: 测试所用博客</span><br><span class="line">subtitle: 测试</span><br><span class="line">description: 网页描述</span><br><span class="line">author: 测试</span><br><span class="line">language: zh-<span class="attribute">CN</span></span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
+
+<h2 id="更换hexo主题为next"><a href="#更换hexo主题为next" class="headerlink" title="更换hexo主题为next"></a>更换hexo主题为next</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">theme: <span class="attribute">next</span> <span class="comment"># 选择next主题</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">scheme: <span class="attribute">Pisces</span> <span class="comment"># 选择next主题模式</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. local_hexo_test.<span class="attribute">sh</span> <span class="comment"># 本地测试</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="设置预览摘要"><a href="#设置预览摘要" class="headerlink" title="设置预览摘要"></a>设置预览摘要</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install --save hexo-excerpt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml 添加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">auto_excerpt: </span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  length: <span class="number">150</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">. local_hexo_test.<span class="attribute">sh</span> <span class="comment"># 本地测试</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加评论功能"><a href="#添加评论功能" class="headerlink" title="添加评论功能"></a>添加评论功能</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">changyan:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  appid: cywD8vvrc</span><br><span class="line">  appkey: 1208ec59e1693128f587e4e6dabcbee1</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加菜单选项"><a href="#添加菜单选项" class="headerlink" title="添加菜单选项"></a>添加菜单选项</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || <span class="attribute">fa</span> fa-home</span><br><span class="line">  about: /about/ || fa fa-user</span><br><span class="line">  tags: /tags/ || fa fa-tags</span><br><span class="line">  categories: /categories/ || fa fa-th</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 添加分类页面</span></span><br><span class="line"><span class="attribute">hexo</span> new page <span class="string">&quot;categories&quot;</span></span><br><span class="line"><span class="comment"># 添加标签页面</span></span><br><span class="line">hexo new page <span class="string">&quot;tags&quot;</span></span><br><span class="line"><span class="comment"># 添加关于页面</span></span><br><span class="line">hexo new page <span class="string">&quot;about&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>blog\source_posts\tags.md</p>
+<p>blog\source_posts\categories.md</p>
+<p>blog\source_posts\about.md</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2023-04-19 01:07:31</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2023-04-19 01:07:31</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br><span class="line">    </span><br><span class="line">---</span><br><span class="line">title: 关于</span><br><span class="line">date: 2023-04-19 01:07:31</span><br><span class="line">type: &quot;about&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加阅读次数统计"><a href="#添加阅读次数统计" class="headerlink" title="添加阅读次数统计"></a>添加阅读次数统计</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  total_visitors: <span class="literal">true</span></span><br><span class="line">  total_visitors_icon: fa fa-user</span><br><span class="line">  total_views: <span class="literal">true</span></span><br><span class="line">  total_views_icon: fa fa-eye</span><br><span class="line">  post_views: <span class="literal">true</span></span><br><span class="line">  post_views_icon: fa fa-eye   </span><br></pre></td></tr></table></figure>
+
+<h2 id="添加社交链接-暂定"><a href="#添加社交链接-暂定" class="headerlink" title="添加社交链接 - 暂定"></a>添加社交链接 - 暂定</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">本人qq 微信</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加友情链接"><a href="#添加友情链接" class="headerlink" title="添加友情链接"></a>添加友情链接</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Blog rolls</span></span><br><span class="line">links_settings:</span><br><span class="line">  icon: <span class="attribute">fa</span> fa-link</span><br><span class="line">  title: Links</span><br><span class="line">  <span class="comment"># Available values: block | inline</span></span><br><span class="line">  layout: block</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接改link即可</span></span><br><span class="line">links:</span><br><span class="line">  <span class="comment">#Title: http://yoursite.com</span></span><br><span class="line">  菜鸟教程: https://www.runoob.com/</span><br><span class="line">  编程宝库: http://www.codebaoku.com/</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+
+<h2 id="显示每篇文章字数"><a href="#显示每篇文章字数" class="headerlink" title="显示每篇文章字数"></a>显示每篇文章字数</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章末尾添加版权说明"><a href="#文章末尾添加版权说明" class="headerlink" title="文章末尾添加版权说明"></a>文章末尾添加版权说明</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">creative_commons:</span><br><span class="line">  license: by-nc-<span class="attribute">sa</span></span><br><span class="line">  sidebar: <span class="literal">true</span></span><br><span class="line">  post: <span class="literal">true</span></span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置个人头像-–-待定"><a href="#设置个人头像-–-待定" class="headerlink" title="设置个人头像 – 待定"></a>设置个人头像 – 待定</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line">avatar:</span><br><span class="line">  <span class="comment"># Replace the default image and set the url here.</span></span><br><span class="line">  url: /images/avatar.<span class="attribute">gif</span>   <span class="comment"># 把文件保存放在next/source/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be dispalyed in circle.</span></span><br><span class="line">  rounded: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If true, the avatar will be rotated with the cursor.</span></span><br><span class="line">  rotated: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="显示网站图标-暂定"><a href="#显示网站图标-暂定" class="headerlink" title="显示网站图标 - 暂定"></a>显示网站图标 - 暂定</h2><h2 id="添加留言板块"><a href="#添加留言板块" class="headerlink" title="添加留言板块"></a>添加留言板块</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> new page guestbook</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog\source\guestbook\index.md</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 留言板</span><br><span class="line">date: 2023-04-24 07:29:20</span><br><span class="line">type: &quot;guestbook&quot;</span><br><span class="line">---</span><br><span class="line"> &lt;<span class="attribute">div</span> class=<span class="string">&quot;ds-recent-visitors&quot;</span> data-num-items=<span class="string">&quot;28&quot;</span> data-avatar-size=<span class="string">&quot;42&quot;</span> id=<span class="string">&quot;ds-recent-visitors&quot;</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  schedule: /schedule/ || <span class="attribute">fa</span> fa-calendar</span><br><span class="line">  archives: /archives/ || fa fa-archive</span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  guestbook: /guestbook/ || fa fa-heartbeat <span class="comment"># 添加这个</span></span><br></pre></td></tr></table></figure>
+
+<p>hexo用的是awsome4的图标:<span class="exturl" data-url="aHR0cHM6Ly9mb250YXdlc29tZS5jb20vdjQvaWNvbi9hZGRyZXNzLWNhcmQtbw==">fa-address-card-o: Font Awesome Icons<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="修改文章底部的-号标签"><a href="#修改文章底部的-号标签" class="headerlink" title="修改文章底部的#号标签"></a>修改文章底部的#号标签</h2><blockquote>
+<p>/blog/themes/next/layout/_macro/post.swig</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">找到:rel=&quot;tag&quot;&gt;&#123;&#123; <span class="attribute">tag_indicate</span> &#125;&#125;  </span><br><span class="line">换为:rel=<span class="string">&quot;tag&quot;</span>&gt;&lt;i class=<span class="string">&quot;fa fa-tag&quot;</span>&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加动态背景"><a href="#添加动态背景" class="headerlink" title="添加动态背景"></a>添加动态背景</h2><blockquote>
+<p>只支持next 7.3.0+</p>
+<p>创建 /blog/source/_data/footer.swig </p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;<span class="attribute">script</span> color=<span class="string">&quot;0,0,255&quot;</span> opacity=<span class="string">&quot;0.5&quot;</span> zIndex=<span class="string">&quot;-1&quot;</span> count=<span class="string">&quot;99&quot;</span> src=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line">custom_file_path:</span><br><span class="line">  <span class="comment">#head: source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  footer: source/_data/footer.<span class="attribute">swig</span>  <span class="comment"># 取消这个注释</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="comment">#style: source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文章加密访问-暂定"><a href="#文章加密访问-暂定" class="headerlink" title="文章加密访问 - 暂定"></a>文章加密访问 - 暂定</h2><blockquote>
+<p>缺点：密码输入明文</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>文章字段添加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo博客配置</span><br><span class="line">date: 2023-04-18 07:09:03</span><br><span class="line">tags: </span><br><span class="line">	- <span class="attribute">hexo</span></span><br><span class="line">	- 未完成</span><br><span class="line">categories: 博客搭建</span><br><span class="line">password: password  <span class="comment"># 加这个字段</span></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加分享功能"><a href="#添加分享功能" class="headerlink" title="添加分享功能"></a>添加分享功能</h2><blockquote>
+<p> /blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">$ <span class="attribute">npm</span> install theme-next/hexo-next-share  <span class="comment"># 这个包下的特别慢</span></span><br><span class="line">$ npm install -g grunt </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml 添加代码片段</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># NeedMoreShare2</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/theme-next-needmoreshare2</span></span><br><span class="line"><span class="comment"># For more information: https://github.com/revir/need-more-share2</span></span><br><span class="line"><span class="comment"># iconStyle: default | box</span></span><br><span class="line"><span class="comment"># boxForm: horizontal | vertical</span></span><br><span class="line"><span class="comment"># position: top / middle / bottom + Left / Center / Right</span></span><br><span class="line"><span class="comment"># networks:</span></span><br><span class="line"><span class="comment"># Weibo | Wechat | Douban | QQZone | Twitter | Facebook | Linkedin | Mailto | Reddit | Delicious | StumbleUpon | Pinterest</span></span><br><span class="line"><span class="comment"># GooglePlus | Tumblr | GoogleBookmarks | Newsvine | Evernote | Friendfeed | Vkontakte | Odnoklassniki | Mailru</span></span><br><span class="line">needmoreshare:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  cdn:</span><br><span class="line">    js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@<span class="number">1</span>/needsharebutton.min.js</span><br><span class="line">    css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@<span class="number">1</span>/needsharebutton.min.css</span><br><span class="line">  postbottom:</span><br><span class="line">    enable: <span class="literal">true</span></span><br><span class="line">    options:</span><br><span class="line">      iconStyle: default</span><br><span class="line">      boxForm: horizontal</span><br><span class="line">      position: middle</span><br><span class="line">      networks: Wechat,QQZone,Weibo,Douban,Twitter,Facebook</span><br><span class="line">  float:</span><br><span class="line">    enable: <span class="literal">false</span></span><br><span class="line">    options:</span><br><span class="line">      iconStyle: default</span><br><span class="line">      boxForm: vertical</span><br><span class="line">      position: middle</span><br><span class="line">      networks: Wechat,QQZone,Weibo,Douban,Twitter,Facebook</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ExNzEyMzI4ODYvYXJ0aWNsZS9kZXRhaWxzLzEyMTIxMDA3Mg==">Hexo+NexT添加分享功能_小王同学w的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="搜索功能"><a href="#搜索功能" class="headerlink" title="搜索功能"></a>搜索功能</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/_config.yml 添加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.<span class="attribute">xml</span></span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml  </p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line">local_search:</span><br><span class="line">  enable: <span class="attribute">true</span> </span><br><span class="line">  preload: <span class="literal">true</span>  </span><br></pre></td></tr></table></figure>
+
+<h2 id="设置代码高亮"><a href="#设置代码高亮" class="headerlink" title="设置代码高亮"></a>设置代码高亮</h2><blockquote>
+<p>/blog/theme/next/_config.yml  </p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  <span class="comment"># Code Highlight theme</span></span><br><span class="line">  <span class="comment"># Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic</span></span><br><span class="line">  <span class="comment"># See: https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line">  highlight_theme: <span class="attribute">night</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line">  copy_button:</span><br><span class="line">    enable: <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Show text copy result.</span></span><br><span class="line">    show_result: <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Available values: default | flat | mac</span></span><br><span class="line">    style: mac</span><br></pre></td></tr></table></figure>
+
+<h2 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在需要置顶的文章的<code>Front-matter</code>中加上<code>top: true</code> 或者<code>top: 任意数字</code>,top中数字越大，文章越靠前</p>
+</blockquote>
+<p><strong>设置置顶图标</strong></p>
+<blockquote>
+<p>/themes/next/layout/_macro/post.swig</p>
+</blockquote>
+<p>在&lt;div class=”post-meta”&gt;的第一个&lt;span&gt;标签下，插入如下代码</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="attribute">if</span> post.top %&#125;</span><br><span class="line">    &lt;i class=<span class="string">&quot;fa fa-thumb-tack&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">    &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">    &lt;span class=<span class="string">&quot;post-meta-divider&quot;</span>&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% <span class="attribute">endif</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9hOTkyMmMzZWJiNjE=">Hexo nexT主题之文章置顶 - 简书 (jianshu.com)<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="开启打赏功能-暂定"><a href="#开启打赏功能-暂定" class="headerlink" title="开启打赏功能-暂定"></a>开启打赏功能-暂定</h2><h2 id="订阅微信公众号-暂定"><a href="#订阅微信公众号-暂定" class="headerlink" title="订阅微信公众号-暂定"></a>订阅微信公众号-暂定</h2><h2 id="萌妹看板娘"><a href="#萌妹看板娘" class="headerlink" title="萌妹看板娘"></a>萌妹看板娘</h2><blockquote>
+<p>/hexo/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/hexo/blog/theme/next/_config.yml   添加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: <span class="literal">false</span></span><br><span class="line">  <span class="literal">debug</span>: <span class="literal">false</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-wanko</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: <span class="number">150</span></span><br><span class="line">    height: <span class="number">300</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span></span><br><span class="line">  react:</span><br><span class="line">    opacity: <span class="number">0</span>.<span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0VZSE4vaGV4by1oZWxwZXItbGl2ZTJkL2Jsb2IvbWFzdGVyL1JFQURNRS56aC1DTi5tZA==">hexo-helper-live2d/README.zh-CN.md at master · EYHN/hexo-helper-live2d (github.com)<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="Cloudflare缓存图像"><a href="#Cloudflare缓存图像" class="headerlink" title="Cloudflare缓存图像"></a>Cloudflare缓存图像</h2><blockquote>
+<p>/hexo/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> i hexo-image-cloudflare</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25qemp6L2hleG8taW1hZ2UtY2xvdWRmbGFyZQ==">njzjz/hexo-image-cloudflare：使用 Cloudflare 在 Hexo 中缓存图像 (github.com)<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="添加右上角图标folk-github"><a href="#添加右上角图标folk-github" class="headerlink" title="添加右上角图标folk github"></a>添加右上角图标folk github</h2><blockquote>
+<p>/blog/theme/next/_config.yml  </p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line">github_banner:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  permalink: https://github.com/zhizcy1003</span><br><span class="line">  title: Follow me <span class="literal">on</span> GitHub</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加网站地图sitemap-后面百度推送用到"><a href="#添加网站地图sitemap-后面百度推送用到" class="headerlink" title="添加网站地图sitemap - 后面百度推送用到"></a>添加网站地图sitemap - 后面百度推送用到</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml 添加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 自动生成sitemap</span></span><br><span class="line">sitemap:</span><br><span class="line">  path: sitemap.<span class="attribute">xml</span></span><br><span class="line">baidusitemap:</span><br><span class="line">  path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
+
+<h2 id="压缩html，js文件"><a href="#压缩html，js文件" class="headerlink" title="压缩html，js文件"></a>压缩html，js文件</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-neat --save</span><br></pre></td></tr></table></figure>
+
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2N1bmd1ZGFmYS9hcnRpY2xlL2RldGFpbHMvMTA0MzI3NDk3">(119条消息) Hexo-neat插件优化提升访问效率_cungudafa的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>/blog/_config.yml 追加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-neat</span></span><br><span class="line"><span class="comment"># md博文压缩</span></span><br><span class="line">neat_enable: <span class="attribute">true</span></span><br><span class="line"><span class="comment"># 压缩html（ejs，swig等也属于html格式片段）</span></span><br><span class="line">neat_html:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  exclude:</span><br><span class="line"><span class="comment"># 压缩css  </span></span><br><span class="line">neat_css:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  exclude:</span><br><span class="line">    - <span class="string">&#x27;*.min.css&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/*.min.css&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;jquery.fancybox.min.css&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/live2d-widget/waifu.css&#x27;</span></span><br><span class="line"><span class="comment"># 压缩js</span></span><br><span class="line">neat_js:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line">  mangle: <span class="literal">true</span> <span class="comment">#打印日志</span></span><br><span class="line">  output:</span><br><span class="line">  compress:</span><br><span class="line">  exclude: <span class="comment">#排除文件</span></span><br><span class="line">    - <span class="string">&#x27;*.min.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/*.min.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;jquery.fancybox.min.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/live2d-widget/*.js&#x27;</span></span><br><span class="line">    - <span class="string">&#x27;**/live2d-widget/*.min.js&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加网站运行时间"><a href="#添加网站运行时间" class="headerlink" title="添加网站运行时间"></a>添加网站运行时间</h2><blockquote>
+<p>\blog\themes\next\layout\_partials\footer.swig 末尾追加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;!-- 网站运行时间的设置 --&gt;</span><br><span class="line">&lt;<span class="attribute">span</span> id=<span class="string">&quot;timeDate&quot;</span>&gt;载入天数...&lt;/span&gt;</span><br><span class="line">&lt;span id=<span class="string">&quot;times&quot;</span>&gt;载入时分秒...&lt;/span&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var now = new Date();</span><br><span class="line">    <span class="attribute">function</span> createtime() &#123;</span><br><span class="line">        <span class="attribute">var</span> grt= new Date(<span class="string">&quot;03/01/2023 10:00:00&quot;</span>); //此处修改你的建站时间或者网站上线时间</span><br><span class="line">        now.setTime(now.getTime()+250);</span><br><span class="line">        <span class="attribute">days</span> = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> / <span class="number">24</span>; <span class="attribute">dnum</span> = Math.floor(days);</span><br><span class="line">        <span class="attribute">hours</span> = (now - grt ) / <span class="number">1000</span> / <span class="number">60</span> / <span class="number">60</span> - (<span class="number">24</span> * dnum); <span class="attribute">hnum</span> = Math.floor(hours);</span><br><span class="line">        if(String(hnum).<span class="attribute">length</span> ==<span class="number">1</span> )&#123;<span class="attribute">hnum</span> = <span class="string">&quot;0&quot;</span> + hnum;&#125; <span class="attribute">minutes</span> = (now - grt ) / <span class="number">1000</span> /<span class="number">60</span> - (<span class="number">24</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * hnum);</span><br><span class="line">        <span class="attribute">mnum</span> = Math.floor(minutes); if(String(mnum).<span class="attribute">length</span> ==<span class="number">1</span> )&#123;<span class="attribute">mnum</span> = <span class="string">&quot;0&quot;</span> + mnum;&#125;</span><br><span class="line">        <span class="attribute">seconds</span> = (now - grt ) / <span class="number">1000</span> - (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * dnum) - (<span class="number">60</span> * <span class="number">60</span> * hnum) - (<span class="number">60</span> * mnum);</span><br><span class="line">        <span class="attribute">snum</span> = Math.round(seconds); if(String(snum).<span class="attribute">length</span> ==<span class="number">1</span> )&#123;<span class="attribute">snum</span> = <span class="string">&quot;0&quot;</span> + snum;&#125;</span><br><span class="line">        document.getElementById(&quot;timeDate&quot;).<span class="attribute">innerHTML</span> = <span class="string">&quot;&lt;br&gt;本站已安全运行 &quot;</span>+dnum+<span class="string">&quot; 天 &quot;</span>;</span><br><span class="line">        document.getElementById(&quot;times&quot;).<span class="attribute">innerHTML</span> = hnum + <span class="string">&quot; 小时 &quot;</span> + mnum + <span class="string">&quot; 分 &quot;</span> + snum + <span class="string">&quot; 秒.&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">setInterval(&quot;createtime()&quot;,250);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用base64加密和解密外部链接"><a href="#使用base64加密和解密外部链接" class="headerlink" title="使用base64加密和解密外部链接"></a>使用base64加密和解密外部链接</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">exturl: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="启用百度推送"><a href="#启用百度推送" class="headerlink" title="启用百度推送"></a>启用百度推送</h2><blockquote>
+<p>先验证网站：<span class="exturl" data-url="aHR0cHM6Ly96aXl1YW4uYmFpZHUuY29tL3NpdGU=">https://ziyuan.baidu.com/site<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">baidu_push: true</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>themes\next\layout_scripts\baidu_push.swig（没有这个文件则创建），添加以下代码</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="attribute">if</span> theme.baidu_push %&#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">(function()&#123;</span><br><span class="line">    <span class="attribute">var</span> bp = document.createElement(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">    <span class="attribute">var</span> curProtocol = window.location.protocol.split(<span class="string">&#x27;:&#x27;</span>)[<span class="number">0</span>];</span><br><span class="line">    <span class="attribute">if</span> (curProtocol === <span class="string">&#x27;https&#x27;</span>) &#123;</span><br><span class="line">        bp.<span class="attribute">src</span> = <span class="string">&#x27;https://zz.bdstatic.com/linksubmit/push.js&#x27;</span>;        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="section">else</span> &#123;</span><br><span class="line">        bp.<span class="attribute">src</span> = <span class="string">&#x27;http://push.zhanzhang.baidu.com/push.js&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attribute">var</span> s = document.getElementsByTagName(<span class="string">&quot;script&quot;</span>)[<span class="number">0</span>];</span><br><span class="line">    s.parentNode.insertBefore(bp, s);</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&#123;% <span class="attribute">endif</span> %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2J5dGVzdHVkaW8vYXJ0aWNsZS9kZXRhaWxzLzEyNTkyMjM2Mw==">https://blog.csdn.net/bytestudio/article/details/125922363<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="黑夜模式"><a href="#黑夜模式" class="headerlink" title="黑夜模式"></a>黑夜模式</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">darkmode: true</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cudGVjaGdyb3cuY24vcG9zdHMvYWJmNGFlZTEuaHRtbCNXYWxpbmUtJUU4JUFGJTg0JUU4JUFFJUJBJUU3JUIzJUJCJUU3JUJCJTlG">Hexo Next 8.x 主题添加可切换的暗黑模式 | Clay 的技术博客 (techgrow.cn)<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="开启聊天-–-待定"><a href="#开启聊天-–-待定" class="headerlink" title="开启聊天 – 待定"></a>开启聊天 – 待定</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">chat:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  service: chatra</span><br><span class="line">  <span class="comment">#service: tidio</span></span><br><span class="line">  icon: fa fa-comment <span class="comment"># Icon name in Font Awesome, set false to disable icon.</span></span><br><span class="line">  text: Chat <span class="comment"># Button text, change it as you wish.</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="开启书签支持-–-暂定"><a href="#开启书签支持-–-暂定" class="headerlink" title="开启书签支持 – 暂定"></a>开启书签支持 – 暂定</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">bookmark:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="开启ajax导航"><a href="#开启ajax导航" class="headerlink" title="开启ajax导航"></a>开启ajax导航</h2><blockquote>
+<p>/blog/themes/next</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-pjax source/lib/pjax</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="图像缩放"><a href="#图像缩放" class="headerlink" title="图像缩放"></a>图像缩放</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">fancybox: true</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-fancybox source/lib/fancybox    <span class="comment"># install Fancybox 2.x</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">lazyload: true</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-jquery-lazyload source/lib/jquery_lazyload</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关文章推荐"><a href="#相关文章推荐" class="headerlink" title="相关文章推荐"></a>相关文章推荐</h2><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">npm</span> install hexo-related-popular-posts --save</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">related_posts:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章阅读进度显示"><a href="#文章阅读进度显示" class="headerlink" title="文章阅读进度显示"></a>文章阅读进度显示</h2><blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">back2top:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  <span class="comment"># Back to top in sidebar.</span></span><br><span class="line">  sidebar: <span class="literal">true</span></span><br><span class="line">  <span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line">  scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="页面顶部进度条"><a href="#页面顶部进度条" class="headerlink" title="页面顶部进度条"></a>页面顶部进度条</h2><blockquote>
+<p>/blog/theme/next</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-reading-progress source/lib/reading_progress</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Reading progress bar</span></span><br><span class="line">reading_progress:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  <span class="comment"># Available values: top | bottom</span></span><br><span class="line">  position: top</span><br><span class="line">  color: <span class="string">&quot;#37c6c0&quot;</span></span><br><span class="line">  height: 3px</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章页面加载进度条"><a href="#文章页面加载进度条" class="headerlink" title="文章页面加载进度条"></a>文章页面加载进度条</h2><blockquote>
+<p>不推荐，国内手机浏览动画会停留</p>
+</blockquote>
+<blockquote>
+<p>/blog/theme/next</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">git</span> clone https://github.com/theme-next/theme-next-pace source/lib/pace</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: <span class="attribute">true</span></span><br><span class="line">  theme: center-radar</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加点击爱心效果"><a href="#添加点击爱心效果" class="headerlink" title="添加点击爱心效果"></a>添加点击爱心效果</h2><blockquote>
+<p>/blog/theme/next/source/js/clicklove.js  创建clicklove.js</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">!function(e,t,a)&#123;<span class="attribute">function</span> n()&#123;c(&quot;.heart&#123;width: 10px;height: 10px;position: fixed;background: <span class="comment">#f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);&#125;.heart:after,.heart:before&#123;content: &#x27;&#x27;;width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;&#125;.heart:after&#123;top: -5px;&#125;.heart:before&#123;left: -5px;&#125;&quot;),o(),r()&#125;function r()&#123;for(var e=0;e&lt;d.length;e++)d[e].alpha&lt;=0?(t.body.removeChild(d[e].el),d.splice(e,1)):(d[e].y--,d[e].scale+=.004,d[e].alpha-=.013,d[e].el.style.cssText=&quot;left:&quot;+d[e].x+&quot;px;top:&quot;+d[e].y+&quot;px;opacity:&quot;+d[e].alpha+&quot;;transform:scale(&quot;+d[e].scale+&quot;,&quot;+d[e].scale+&quot;) rotate(45deg);background:&quot;+d[e].color+&quot;;z-index:99999&quot;);requestAnimationFrame(r)&#125;function o()&#123;var t=&quot;function&quot;==typeof e.onclick&amp;&amp;e.onclick;e.onclick=function(e)&#123;t&amp;&amp;t(),i(e)&#125;&#125;function i(e)&#123;var a=t.createElement(&quot;div&quot;);a.className=&quot;heart&quot;,d.push(&#123;el:a,x:e.clientX-5,y:e.clientY-5,scale:1,alpha:1,color:s()&#125;),t.body.appendChild(a)&#125;function c(e)&#123;var a=t.createElement(&quot;style&quot;);a.type=&quot;text/css&quot;;try&#123;a.appendChild(t.createTextNode(e))&#125;catch(t)&#123;a.styleSheet.cssText=e&#125;t.getElementsByTagName(&quot;head&quot;)[0].appendChild(a)&#125;function s()&#123;return&quot;rgb(&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;,&quot;+~~(255*Math.random())+&quot;)&quot;&#125;var d=[];e.requestAnimationFrame=function()&#123;return e.requestAnimationFrame||e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(e)&#123;setTimeout(e,1e3/60)&#125;&#125;(),n()&#125;(window,document);</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/layout/_layout.swig 追加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt; &lt;<span class="attribute">script</span> type=<span class="string">&quot;text/javascript&quot;</span> src=<span class="string">&quot;/js/clicklove.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="日历-–待定"><a href="#日历-–待定" class="headerlink" title="日历 –待定"></a>日历 –待定</h2><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h2><blockquote>
+<p>themes\next\layout\_macro\sidebar.swig<code>找到</code>sidebar-inner</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">&lt;<span class="attribute">aside</span> class=<span class="string">&quot;sidebar&quot;</span>&gt;</span><br><span class="line"> &lt;div class=<span class="string">&quot;sidebar-inner&quot;</span>&gt; //从下面开始复制，粘贴到这里</span><br><span class="line">  &lt;!--网易云插件--&gt;</span><br><span class="line">&lt;iframe frameborder=<span class="string">&quot;no&quot;</span> border=<span class="string">&quot;0&quot;</span> marginwidth=<span class="string">&quot;0&quot;</span> marginheight=<span class="string">&quot;0&quot;</span> width=<span class="number">298</span> height=<span class="number">52</span> src=<span class="string">&quot;//music.163.com/outchain/player?type=0&amp;id=8144103265&amp;auto=1&amp;height=32&quot;</span>&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/theme/next/_config.yml 添加</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">music:</span><br><span class="line">	enable: <span class="attribute">true</span></span><br><span class="line">	autoplay: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L1F4aWFvZmVpXy9hcnRpY2xlL2RldGFpbHMvMTIzMDcyNjEw">(119条消息) 【Hexo】Next主题添加全局播放翻页不间断的网易云音乐_Q大帅的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="pdf展示–待定"><a href="#pdf展示–待定" class="headerlink" title="pdf展示–待定"></a>pdf展示–待定</h2><blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cueW91c2F6b2UudG9wL2FyY2hpdmVzL2MxMmM5YzQwLmh0bWw=">Hexo-NexT 博客使用插件总结 | Fl0w3r (yousazoe.top)<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h2 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h2><h1 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h1><h2 id="生成模板"><a href="#生成模板" class="headerlink" title="生成模板"></a>生成模板</h2><h3 id="新建文章模板修改"><a href="#新建文章模板修改" class="headerlink" title="新建文章模板修改"></a>新建文章模板修改</h3><p>我们可以修改一下文章模板，可以将<code>/scaffolds/post.md</code>修改为如下代码</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; <span class="attribute">title</span> &#125;&#125; </span><br><span class="line">date: &#123;&#123; <span class="attribute">date</span> &#125;&#125;</span><br><span class="line">author: </span><br><span class="line">img: </span><br><span class="line">coverImg: </span><br><span class="line">top: <span class="literal">false</span></span><br><span class="line">cover: <span class="literal">false</span></span><br><span class="line">toc: <span class="literal">true</span></span><br><span class="line">mathjax: <span class="literal">false</span></span><br><span class="line">password:</span><br><span class="line">summary:</span><br><span class="line">keywords:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>解读</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: typora-vue-theme主题介绍 <span class="comment"># 文章标题</span></span><br><span class="line">date: 2018-09-07 09:25:00  <span class="comment"># 发布时间，强烈建议填写此选项，且最好保证全局唯一</span></span><br><span class="line">author: 赵奇 <span class="comment"># 文章作者</span></span><br><span class="line">img: /source/images/xxx.<span class="attribute">jpg</span>  <span class="comment"># 文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: http://xxx.com/xxx.jpg</span></span><br><span class="line">top: <span class="literal">true</span> <span class="comment"># 推荐文章（文章是否置顶），如果 top 值为 true，则会作为首页推荐文章</span></span><br><span class="line">cover: <span class="literal">true</span>  <span class="comment"># v1.0.2版本新增，表示该文章是否需要加入到首页轮播封面中</span></span><br><span class="line">coverImg: /images/<span class="number">1</span>.jpg <span class="comment"># 版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</span></span><br><span class="line">password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92 <span class="comment"># 文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 password 的值，该值必须是用 SHA256 加密后的密码，防止被他人识破。前提是在主题的 config.yml 中激活了 verifyPassword 选项</span></span><br><span class="line">toc: <span class="literal">true</span> <span class="comment"># 是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 config.yml 中激活了 toc 选项</span></span><br><span class="line">mathjax: <span class="literal">false</span>  <span class="comment"># 是否开启数学公式支持 ，本文章是否开启 mathjax，且需要在主题的 _config.yml 文件中也需要开启才行</span></span><br><span class="line">summary: <span class="comment"># 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</span></span><br><span class="line">categories: Markdown <span class="comment"># 文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</span></span><br><span class="line">tags:  <span class="comment"># 文章标签，一篇文章可以多个标签</span></span><br><span class="line">  - Typora </span><br><span class="line">  - Markdown</span><br><span class="line">keywords: 文章关键字，SEO 时需要</span><br><span class="line">---</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h3><blockquote>
+<p>/blog</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">hexo</span> new <span class="string">&quot;测试文章&quot;</span> <span class="comment"># 生成blog\source\_posts\测试文章.md</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t1YXNoaWppZGV4aWJhby9hcnRpY2xlL2RldGFpbHMvMTEyOTcxNjU3P3NwbT0xMDAxLjIwMTQuMzAwMS41NTAy">(119条消息) Hexo-Matery主题细致美化_http s://ww w.7j2 7z12l.co_marma1ade的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="markdown编辑器"><a href="#markdown编辑器" class="headerlink" title="markdown编辑器"></a>markdown编辑器</h2><h3 id="typaro"><a href="#typaro" class="headerlink" title="typaro"></a>typaro</h3><blockquote>
+<p>typaro插入图片上传到github</p>
+</blockquote>
+<h4 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h4><h4 id="typaro设置"><a href="#typaro设置" class="headerlink" title="typaro设置"></a>typaro设置</h4><h4 id="pico插件"><a href="#pico插件" class="headerlink" title="pico插件"></a>pico插件</h4><h4 id="上传失败总结"><a href="#上传失败总结" class="headerlink" title="上传失败总结"></a>上传失败总结</h4><blockquote>
+<p>重复上传,文件重名</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">修改本地文件名重传</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考：</p>
+<blockquote>
+<p>markdown语法</p>
+</blockquote>
+<p>参考：</p>
+<h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="国内coding托管"><a href="#国内coding托管" class="headerlink" title="国内coding托管"></a>国内coding托管</h2><h3 id="线上配置"><a href="#线上配置" class="headerlink" title="线上配置"></a>线上配置</h3><h3 id="线下配置"><a href="#线下配置" class="headerlink" title="线下配置"></a>线下配置</h3><blockquote>
+<p>验证公钥</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@e</span>.coding.net</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>/blog/_config.yml</p>
+</blockquote>
+<blockquote>
+<p>用ssh链接基于公钥，用https基于账号密码</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  - type: <span class="attribute">git</span></span><br><span class="line">    repo: git<span class="variable">@github</span>.com:zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">    branch: master</span><br><span class="line">  - type: git</span><br><span class="line">    repo: git<span class="variable">@e</span>.coding.net:python-yu/zhizcy1003/zhizcy1003.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Jsb3dNb29ucy9hcnRpY2xlL2RldGFpbHMvMTAwNTQ0NDQ0">(119条消息) Hexo部署到Coding上_乡草的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cudm9pZGtpbmcuY29tL2Rldi1oZXhvLW11bHRpLWdpdC8=">Hexo配置多个git仓库 | 好好学习的郝 (voidking.com)<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMzYxNjQ4MQ==">Hexo搭建的GitHub博客之优化大全 - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span>–老版本的需要查看对应版本的hexo配置–全面–主要使用</p>
+<p><span class="exturl" data-url="aHR0cDovL3RoZW1lLW5leHQuaWlzc25hbi5jb20vdGhlbWUtc2V0dGluZ3MuaHRtbA==">主题配置 - NexT 使用文档 (iissnan.com)<i class="fa fa-external-link-alt"></i></span>–主要使用–中文</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzLw==">文档 |下一个 (theme-next.js.org)<i class="fa fa-external-link-alt"></i></span>–配合上面使用-英文</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2NvZGVqb2tlcl83L2FydGljbGUvZGV0YWlscy8xMjMyMzU2ODc=">hexo中next主题7.8版本设置阅读全文_hexo next 7.8_JiangPengCode的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly91eGF3c2VueS5naXRodWIuaW8vMjAyMS8wNy8yNS9IZXhvJUU2JTk2JUIwJUU3JTg5JTg4JUU2JTlDJUFDJUU0JUI4JThFJUU2JTk2JUIwJUU3JTg5JTg4JUU2JTlDJUFDbmV4dCVFNSVBRSU4OSVFOCVBMyU4NSVFOSU4NSU4RCVFNyVCRCVBRSVFNSVBRSU4QyVFNiU5NSVCNCVFNiVCNSU4MSVFNyVBOCU4QiglRTYlOEMlODElRTclQkIlQUQlRTYlOUIlQjQlRTYlOTYlQjA=">Hexo新版与新版本next安装配置完整流程(持续更新) | uxawseny<i class="fa fa-external-link-alt"></i></span> /)–这个针对新版也很宝藏</p>
+<p>[Hexo+Next主题优化 - 知乎 (zhihu.com)](<span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zMDgzNjQzNiM=">https://zhuanlan.zhihu.com/p/30836436#<i class="fa fa-external-link-alt"></i></span> 设置菜单项的显示文本和图标)–主题美化</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzMwOTExMjU4">hexo上有什么好玩的插件？ - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly91cHdub3RoaW5nLmdpdGh1Yi5pby96aC1DTi80NGJmOGRlZi8jJUU2JUI3JUJCJUU1JThBJUEwJUU3JTlCJUI4JUU1JTg1JUIzJUU2JTk2JTg3JUU3JUFCJUEwJUU2JThFJUE4JUU4JThEJTkwJUU1JThBJTlGJUU4JTgzJUJE">Hexo + NexT 深度个性化配置 (2020.1 更新) | UPWNothing’s Playground<i class="fa fa-external-link-alt"></i></span>–深度ok</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9maW5pc2t5LmdpdGh1Yi5pby8=">Finisky Garden<i class="fa fa-external-link-alt"></i></span>–这个美化做的很强</p>
+</blockquote>
+<h1 id="优秀博客"><a href="#优秀博客" class="headerlink" title="优秀博客"></a>优秀博客</h1><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuaWRlZnVuLmNvbS9hYm91dC8=">关于 | IdeFun<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9rYWlib3NoaS5naXRlZS5pby8=">Kaiboshiの博客 (gitee.io)<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">主要看程序版本</span><br><span class="line"></span><br><span class="line">主程序官网文档完善</span><br><span class="line">插件文档完善</span><br><span class="line">配置文件参考链接完善 - 最好直接链接到github非常方便</span><br><span class="line"></span><br><span class="line">查资料一定要带上  版本+问题  去查</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">最快打开功能：直接看配置文件怎么说明的</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建基本Hexo博客</title>
     <url>/2023/04/18/linux/</url>
     <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="win10内置linux开启-阉割版不推荐"><a href="#win10内置linux开启-阉割版不推荐" class="headerlink" title="win10内置linux开启 -阉割版不推荐"></a>win10内置linux开启 -阉割版不推荐</h2><p>参考<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3em12cC9hcnRpY2xlL2RldGFpbHMvMTEzODA3NzY2">(119条消息) Win10内置Linux系统(Ubuntu)的开启及使用_win10 自带ubuntu_wwzmvp的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
@@ -2268,5 +2113,160 @@ System.out.println(&quot;b = &quot; + b);
       <tags>
         <tag>linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>容器</title>
+    <url>/2023/04/24/%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
+<p>ubuntu 20.04</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># 配置阿里源</span><br><span class="line">sudo sed -i.bak <span class="string">&#x27;s/archive.ubuntu.com/mirrors.aliyun.com/g&#x27;</span> /etc/apt/sources.list</span><br><span class="line"># 更新软件源</span><br><span class="line">sudo apt update</span><br><span class="line"># 软件升级到最新</span><br><span class="line">sudo apt upgrade</span><br><span class="line"># 安装依赖</span><br><span class="line">sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common -y</span><br><span class="line"># 安装gpg证书</span><br><span class="line">curl -fsSL https:<span class="comment">//mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span></span><br><span class="line"># 写入软件源信息</span><br><span class="line">sudo add-apt-repository <span class="string">&quot;deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable&quot;</span></span><br><span class="line"># 更新并安装docker-ce</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt -y install docker-ce</span><br><span class="line"># 测试安装是否成功</span><br><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h3 id="修改镜像为本地源–待定"><a href="#修改镜像为本地源–待定" class="headerlink" title="修改镜像为本地源–待定"></a>修改镜像为本地源–待定</h3><h4 id="修改镜像源为国内"><a href="#修改镜像源为国内" class="headerlink" title="修改镜像源为国内"></a>修改镜像源为国内</h4><p>/etc/docker/daemon.json 没有创建一个即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/docker/daemon.json </span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://tceq4jil.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#查看docker服务是否启动</span><br><span class="line">systemctl status docker</span><br><span class="line">#若未启动，则启动docker服务</span><br><span class="line">sudo systemctl start docker</span><br><span class="line">#重新启动docker服务</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line"># 设置开机启动docker</span><br><span class="line">sudo systemctl enable docker</span><br><span class="line"># 检查配置文件是否生效</span><br><span class="line">sudo docker info</span><br><span class="line"># 测试镜像源是否有效</span><br><span class="line">sudo docker pull nginx:latest</span><br><span class="line"># 镜像源测速</span><br><span class="line">sudo time docker pull nginx:latest</span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zNDc2NDM2Njg=">Docker 国内镜像 - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC83MTY1ODA2Njk5NDYxMzc4MDg1">Docker Hub 镜像源 - 掘金 (juejin.cn)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMDk0MzMyL2FydGljbGUvZGV0YWlscy8xMDQwNzU1Mzk=">(119条消息) 2、linux下安装Docker教程并换成阿里云镜像仓库源_辰阳星宇的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h4 id="查找镜像"><a href="#查找镜像" class="headerlink" title="查找镜像"></a>查找镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker search softwarename</span><br><span class="line">docker search httpd</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h4><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看nginx镜像版本</span></span><br><span class="line">sudo docker search nginx</span><br><span class="line"><span class="comment"># 获取nginx最新镜像</span></span><br><span class="line">sudo docker pull softwarename:latest</span><br></pre></td></tr></table></figure>
+
+<h4 id="列出镜像列表"><a href="#列出镜像列表" class="headerlink" title="列出镜像列表"></a>列出镜像列表</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除镜像"><a href="#删除镜像" class="headerlink" title="删除镜像"></a>删除镜像</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker rmi 镜像名</span><br><span class="line">sudo docker rmi hello-world:latest</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建镜像-–-待定"><a href="#创建镜像-–-待定" class="headerlink" title="创建镜像 – 待定"></a>创建镜像 – 待定</h4><p>镜像仓库的已经满足不了需求时</p>
+<h4 id="从已创建的容器中更新镜像，并且提交"><a href="#从已创建的容器中更新镜像，并且提交" class="headerlink" title="从已创建的容器中更新镜像，并且提交"></a>从已创建的容器中更新镜像，并且提交</h4><h4 id="使用Dockerfile来创建一个新镜像"><a href="#使用Dockerfile来创建一个新镜像" class="headerlink" title="使用Dockerfile来创建一个新镜像"></a>使用Dockerfile来创建一个新镜像</h4><h4 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h4><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">sudo docker <span class="keyword">run</span><span class="language-bash"> --name nginx-test4 -p 80:80 -d nginx</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>–name nginx-test</strong>：容器名称。</p>
+</li>
+<li><p><strong>-p 8080:80</strong>： 端口进行映射，将本地 8080 端口映射到容器内部的 80 端口</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker开放80端口映射到本机的8080端口</span><br></pre></td></tr></table></figure></li>
+<li><p><strong>-d nginx</strong>： 设置容器在在后台一直运行</p>
+</li>
+</ul>
+<h4 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo docker ps -a</span><br></pre></td></tr></table></figure>
+
+<h4 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker stop &lt;容器 ID&gt;/别名</span><br><span class="line">sudo docker stop nginx-test</span><br></pre></td></tr></table></figure>
+
+<h4 id="重启容器"><a href="#重启容器" class="headerlink" title="重启容器"></a>重启容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker restart &lt;容器 ID&gt;/别名</span><br><span class="line">sudo docker restart nginx-test3</span><br></pre></td></tr></table></figure>
+
+<h4 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker exec &lt;容器 ID&gt;/别名</span><br><span class="line">sudo docker exec -it nginx-test3 /bin/bash</span><br><span class="line"># 退出容器</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>i：交互式</li>
+<li>t：指定bash</li>
+</ul>
+<h4 id="导入导出容器"><a href="#导入导出容器" class="headerlink" title="导入导出容器"></a>导入导出容器</h4><h5 id="导出-运行时可执行"><a href="#导出-运行时可执行" class="headerlink" title="导出-运行时可执行"></a>导出-运行时可执行</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker export &lt;容器 ID&gt;/别名 &gt; nginx.bak</span><br><span class="line">sudo docker export nginx-test3 &gt; nginx.bak</span><br></pre></td></tr></table></figure>
+
+<h5 id="导入容器快照"><a href="#导入容器快照" class="headerlink" title="导入容器快照"></a>导入容器快照</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo cat nginx.bak |sudo docker import - test_nginx:v1</span><br><span class="line"># 查看镜像</span><br><span class="line">sudo docker images</span><br></pre></td></tr></table></figure>
+
+<p>通过指定 URL 或者某个目录来导入–没用过</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker import http://example.com/exampleimage.tgz example/imagerepo</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><p>容器必须是停止的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># docker rm -f &lt;容器 ID&gt;/别名 &gt;</span><br><span class="line">sudo docker rm -f nginx-test3</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker实例"><a href="#docker实例" class="headerlink" title="docker实例"></a>docker实例</h3><h4 id="docker安装ubuntu"><a href="#docker安装ubuntu" class="headerlink" title="docker安装ubuntu"></a>docker安装ubuntu</h4><h4 id="docker安装nginx"><a href="#docker安装nginx" class="headerlink" title="docker安装nginx"></a>docker安装nginx</h4><h5 id="nginx安装"><a href="#nginx安装" class="headerlink" title="nginx安装"></a>nginx安装</h5><h5 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h5><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>Docker 官网：<span class="exturl" data-url="aHR0cHM6Ly93d3cuZG9ja2VyLmNvbS8=">https://www.docker.com<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRvY2tlci5jb20vZW5naW5lLw==">https://docs.docker.com/engine/<i class="fa fa-external-link-alt"></i></span>)</p>
+<p>Github Docker 源码：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RvY2tlci9kb2NrZXItY2U=">https://github.com/docker/docker-ce<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9kb2NrZXIvZG9ja2VyLWFyY2hpdGVjdHVyZS5odG1s">Docker 架构 | 菜鸟教程 (runoob.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYWxpeXVuLmNvbS9taXJyb3IvP3NwbT1hMmM2aC4xMzY1MTEwMi4wLjAuM2UyMjFiMTFSUWVoc0Ymc2VydmljZVR5cGU9bWlycm9yJnRhZz0lRTUlQUUlQjklRTUlOTklQTg=">阿里巴巴开源镜像站-OPSX镜像站-阿里云开发者社区 (aliyun.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p>[(119条消息) Ubuntu20.04开放指定端口_ubuntu开放指定端口_梁云亮的博客-CSDN博客</p>
+<p><a href="https://blog.csdn.net/lianghecai52171314/article/details/113813826"><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xMzM0OTU5">Docker容器进入的4种方式(推荐最后一种) - 腾讯云开发者社区-腾讯云 (tencent.com)<i class="fa fa-external-link-alt"></i></span></a></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/24/%E5%B7%A5%E5%85%B7/</url>
+    <content><![CDATA[<h1 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h1><h2 id="typaro"><a href="#typaro" class="headerlink" title="typaro"></a>typaro</h2><h3 id="上传图片到github"><a href="#上传图片到github" class="headerlink" title="上传图片到github"></a>上传图片到github</h3><h1 id="绘制流程图"><a href="#绘制流程图" class="headerlink" title="绘制流程图"></a>绘制流程图</h1><h2 id="商业"><a href="#商业" class="headerlink" title="商业"></a>商业</h2><h3 id="processon"><a href="#processon" class="headerlink" title="processon"></a>processon</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cucHJvY2Vzc29uLmNvbS9oaXN0b3J5">ProcessOn - 我的文件<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h2><blockquote>
+<p>Github项目地址：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2pncmFwaA==">https://github.com/jgraph<i class="fa fa-external-link-alt"></i></span></p>
+</blockquote>
+<h3 id="draw-io"><a href="#draw-io" class="headerlink" title="draw.io"></a>draw.io</h3><ul>
+<li>浏览器</li>
+</ul>
+<p><span class="exturl" data-url="aHR0cHM6Ly9hcHAuZGlhZ3JhbXMubmV0Lw==">diagrams.net<i class="fa fa-external-link-alt"></i></span></p>
+<ul>
+<li>桌面端</li>
+</ul>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2pncmFwaC9kcmF3aW8tZGVza3RvcC9yZWxlYXNlcw==">https://github.com/jgraph/drawio-desktop/releases<i class="fa fa-external-link-alt"></i></span></p>
+<ul>
+<li>docker私有部署</li>
+</ul>
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3hpblJDTk4vYXJ0aWNsZS9kZXRhaWxzLzEyMDY0MTU4MA==">(119条消息) 安利个开源免费流程图应用Draw.io/diagrams，告别Visio/ProcessOn_开源流程图_浮肿前行的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="远程桌面控制"><a href="#远程桌面控制" class="headerlink" title="远程桌面控制"></a>远程桌面控制</h1><h2 id="vnc"><a href="#vnc" class="headerlink" title="vnc"></a>vnc</h2><h1 id="Ide"><a href="#Ide" class="headerlink" title="Ide"></a>Ide</h1><h2 id="vscode"><a href="#vscode" class="headerlink" title="vscode"></a>vscode</h2><h3 id="语言支持"><a href="#语言支持" class="headerlink" title="语言支持"></a>语言支持</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># java 语言支持 - 需要先下载jdk 并配置好环境变量</span></span><br><span class="line"><span class="attribute">Extension</span> Pack for Java <span class="comment"># java支持扩展包</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python 支持</span></span><br><span class="line">Python</span><br><span class="line"><span class="comment"># jupyter 支持</span></span><br><span class="line">Jupyter</span><br><span class="line"></span><br><span class="line"><span class="comment"># html css支持</span></span><br><span class="line">HTML CSS Support</span><br><span class="line"><span class="comment"># React支持</span></span><br><span class="line">ES7+ React/Redux/React-Native snippets</span><br><span class="line"><span class="comment"># vue支持</span></span><br><span class="line">Vue Language Features </span><br><span class="line"></span><br><span class="line"><span class="comment"># Go 支持</span></span><br><span class="line">Go</span><br><span class="line"></span><br><span class="line"><span class="comment"># PHP 支持</span></span><br><span class="line">PHP Intelephense</span><br><span class="line"></span><br><span class="line"><span class="comment"># rust支持</span></span><br><span class="line">rust-analyzer</span><br></pre></td></tr></table></figure>
+
+<h3 id="编码支持"><a href="#编码支持" class="headerlink" title="编码支持"></a>编码支持</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># gpt3的ai编码支持 - 一直报错连不上服务器 - 待定</span><br><span class="line">GitHub Copilot</span><br></pre></td></tr></table></figure>
+
+<h3 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 微软浏览器支持 - 需要先安装微软浏览器的某个版本</span></span><br><span class="line"><span class="attribute">Microsoft</span> Edge Tools for VS Code</span><br><span class="line"><span class="comment"># 调试火狐浏览器</span></span><br><span class="line">Debugger for Firefox</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="容器支持-–-插件过于复杂–不建议"><a href="#容器支持-–-插件过于复杂–不建议" class="headerlink" title="容器支持 – 插件过于复杂–不建议"></a>容器支持 – 插件过于复杂–不建议</h3><p>建议：在虚拟机里跑，用vscode bash终端进行控制，用插件简直浪费时间</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Docker 支持 - win建议先下载docker桌面，插件自动安装很慢</span><br><span class="line">Docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="markdown支持"><a href="#markdown支持" class="headerlink" title="markdown支持"></a>markdown支持</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">markdownlint</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码阅读支持"><a href="#代码阅读支持" class="headerlink" title="代码阅读支持"></a>代码阅读支持</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">GitLens — Git supercharged</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="语言包支持"><a href="#语言包支持" class="headerlink" title="语言包支持"></a>语言包支持</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">chainese</span> </span><br></pre></td></tr></table></figure>
+
+<h3 id="linux远程管理"><a href="#linux远程管理" class="headerlink" title="linux远程管理"></a>linux远程管理</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Remote</span> Development</span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ5MDQxNC9hcnRpY2xlL2RldGFpbHMvMTE3NzUwMDc1">(119条消息) VSCode - 使用VSCode远程连接到Linux并实现免密码登录_vscode远程连接linux_insight^tkk的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h3><h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNzg0MjAzMw==">最棒的60个DevOps开源工具 - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/24/%E5%BA%93/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>文章地图</title>
+    <url>/2023/04/24/%E6%96%87%E7%AB%A0%E5%9C%B0%E5%9B%BE/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>站点结构</title>
+    <url>/2023/04/24/%E7%AB%99%E7%82%B9%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>更新日志</title>
+    <url>/2023/04/24/%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/24/%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<h1 id="win10下启动多个应用-java实现"><a href="#win10下启动多个应用-java实现" class="headerlink" title="win10下启动多个应用-java实现"></a>win10下启动多个应用-java实现</h1><blockquote>
+<p>ide运行java脚本</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">startApp</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException  &#123;</span><br><span class="line">		openExe();</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">openExe</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files\\baidu-translate-client\\百度翻译.exe&quot;</span>);                   </span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files\\Typora\\Typora.exe&quot;</span>);  </span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe&quot;</span>);</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files (x86)\\Tencent\\QQMusic\\QQMusic.exe&quot;</span>);</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Windows\\system32\\SnippingTool.exe&quot;</span>);</span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;C:\\Program Files\\draw.io\\draw.io.exe&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpZGlodW8vYXJ0aWNsZS9kZXRhaWxzLzUwMTQzNTU3">(119条消息) java打开指定文件（运行指定程序exe）_四滴火的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDEwNzMwL2FydGljbGUvZGV0YWlscy85MTk5NTg1MQ==">(119条消息) 【JAVA】Win10实现Java文件的开机自启动（附详细步骤）_Yngz_Miao的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/24/%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1>]]></content>
   </entry>
 </search>
