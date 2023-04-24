@@ -11,15 +11,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/schedule/index.html</loc>
-    
-    <lastmod>2023-04-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/guestbook/index.html</loc>
     
     <lastmod>2023-04-23</lastmod>
@@ -162,7 +153,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/linux/</loc>
+    <loc>http://example.com/tags/docker/</loc>
     <lastmod>2023-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -176,7 +167,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/docker/</loc>
+    <loc>http://example.com/tags/linux/</loc>
     <lastmod>2023-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -192,7 +183,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/linux/</loc>
+    <loc>http://example.com/categories/docker/</loc>
     <lastmod>2023-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -206,7 +197,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/docker/</loc>
+    <loc>http://example.com/categories/linux/</loc>
     <lastmod>2023-04-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
