@@ -1,156 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>搭建基本Hexo博客</title>
-    <url>/2023/04/18/linux/</url>
-    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="win10内置linux开启-阉割版不推荐"><a href="#win10内置linux开启-阉割版不推荐" class="headerlink" title="win10内置linux开启 -阉割版不推荐"></a>win10内置linux开启 -阉割版不推荐</h2><p>参考<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3em12cC9hcnRpY2xlL2RldGFpbHMvMTEzODA3NzY2">(119条消息) Win10内置Linux系统(Ubuntu)的开启及使用_win10 自带ubuntu_wwzmvp的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h2><h3 id="vmware"><a href="#vmware" class="headerlink" title="vmware"></a>vmware</h3><h4 id="下载vmware"><a href="#下载vmware" class="headerlink" title="下载vmware"></a>下载vmware</h4><p><span class="exturl" data-url="aHR0cHM6Ly93d3cudm13YXJlLmNvbS9jbi9wcm9kdWN0cy93b3Jrc3RhdGlvbi1wcm8vd29ya3N0YXRpb24tcHJvLWV2YWx1YXRpb24uaHRtbA==">下载 VMware Workstation Pro | CN<i class="fa fa-external-link-alt"></i></span>–下载for windows版本</p>
-<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>略</p>
-<p>许可证：4Y09U-AJK97-089Z0-A3054-83KLA</p>
-<h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><h4 id="下载Ubuntu"><a href="#下载Ubuntu" class="headerlink" title="下载Ubuntu"></a>下载Ubuntu</h4><p><span class="exturl" data-url="aHR0cDovL21pcnJvcnMudXN0Yy5lZHUuY24v">USTC Open Source Software Mirror<i class="fa fa-external-link-alt"></i></span>-中科大源下载非常快</p>
-<p>下载地址：<span class="exturl" data-url="aHR0cDovL2lzby5taXJyb3JzLnVzdGMuZWR1LmNuL3VidW50dS1yZWxlYXNlcy9mb2NhbC91YnVudHUtMjAuMDQuNi1saXZlLXNlcnZlci1hbWQ2NC5pc28=">iso.mirrors.ustc.edu.cn/ubuntu-releases/focal/ubuntu-20.04.6-live-server-amd64.iso<i class="fa fa-external-link-alt"></i></span></p>
-<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><p>略</p>
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zNzA0NTE2ODU=">Vmware workstation 16详细图文安装激活教程！ - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaGVsbG9nbXkvcC8xNzI1MzA0MS5odG1s">VMware 17 下载安装及永久激活使用教程 - 嘿笨笨熊 - 博客园 (cnblogs.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p>[VMware Workstation 17 Pro 通用批量许可证密钥 - 邮莓生活 (mailberry.com.cn)](<span class="exturl" data-url="aHR0cHM6Ly9tYWlsYmVycnkuY29tLmNuLzIwMjIvMTEvdm13YXJlLXdvcmtzdGF0aW9uLTE3LXByby1saWNlbnNlLWtleS8jOn46dGV4dD1WTXdhcmU=">https://mailberry.com.cn/2022/11/vmware-workstation-17-pro-license-key/#:~:text=VMware<i class="fa fa-external-link-alt"></i></span> Workstation 17 Pro许可证密钥,JU090-6039P-08409-8J0QH-2YR7F 已失效 4Y09U-AJK97-089Z0-A3054-83KLA 可用)</p>
-<p>[(119条消息) 下载ubuntu系统镜像的国内源地址，超快 国内镜像源（阿里、网易、清华、中科大）_0x8g1T9E的博客-CSDN博客](<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Npcm9ib3QvYXJ0aWNsZS9kZXRhaWxzLzEwNjMwOTMwNSM6fjp0ZXh0PXVidW50dQ==">https://blog.csdn.net/sirobot/article/details/106309305#:~:text=ubuntu<i class="fa fa-external-link-alt"></i></span> 下载 地址—— 国内 高速 镜像源 2387 1、,https%3A%2F%2Fmirrors.ustc.edu.cn%2F ubuntu -releases%2F 源 https%3A%2F%2Fmirrors.tuna.tsinghua.edu.cn%2F ubuntu -releases%2F 北京)</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbWVmai9wLzE0OTY0NDE2Lmh0bWw=">Ubuntu 20.04 live server版安装(详细版) - 运维密码 - 博客园 (cnblogs.com)<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h1><p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NzIxODMxL2FydGljbGUvZGV0YWlscy8xMDg4OTMyNDg=">(119条消息) Ubuntu获取root权限_gxhlh的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h1><h2 id="PS1-PS2-PS3-PS4"><a href="#PS1-PS2-PS3-PS4" class="headerlink" title="PS1 PS2 PS3 PS4"></a>PS1 PS2 PS3 PS4</h2><p>参考</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MTg3OTc2L2FydGljbGUvZGV0YWlscy83OTI2NzQzMA==">(119条消息) linux下PS1、PS2、PS3、PS4最全详解_linux ps4_咻一咻的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3doaXRlX2lkaW90L2FydGljbGUvZGV0YWlscy83ODI1MzAwNA==">(119条消息) 【Ubuntu】Ubuntu设置和查看环境变量_ubuntu设置环境变量_remo0x的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="软件管理"><a href="#软件管理" class="headerlink" title="软件管理"></a>软件管理</h1><h2 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 更改为中科大源</span><br><span class="line">sudo sed -i.bak &#x27;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#x27; /etc/apt/sources.list</span><br><span class="line"># 更改为阿里源</span><br><span class="line">sudo sed -i.bak &#x27;s/archive.ubuntu.com/mirrors.aliyun.com/g&#x27; /etc/apt/sources.list</span><br><span class="line"># 更新索引</span><br><span class="line">sudo apt update</span><br><span class="line"># 更新软件到索引的最新版本</span><br><span class="line">sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
-
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYWxpeXVuLmNvbS9taXJyb3IvdWJ1bnR1P3NwbT1hMmM2aC4xMzY1MTEwMi4wLjAuM2UyMjFiMTFTMU5MVEM=">ubuntu镜像_ubuntu下载地址_ubuntu安装教程-阿里巴巴开源镜像站 (aliyun.com)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xODgwOTgx">Ubuntu 换源看这一篇就够了 - 腾讯云开发者社区-腾讯云 (tencent.com)<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h2><p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xNDU0NTA5">Ubuntu下安装软件的三种方式 - 腾讯云开发者社区-腾讯云 (tencent.com)<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="配置本地软件源服务器并实现自动拉取"><a href="#配置本地软件源服务器并实现自动拉取" class="headerlink" title="配置本地软件源服务器并实现自动拉取"></a>配置本地软件源服务器并实现自动拉取</h2><p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM2NTQ0MjkwL2FydGljbGUvZGV0YWlscy8xMDQ2OTA2MjY=">(119条消息) ubuntu下的apt内网本地源的正确搭建_ubuntu14 apt 本地_无名小卒～的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lpa3VuYmFpNTcwOC9hcnRpY2xlL2RldGFpbHMvMTE3MDY4NjA4">(119条消息) 【三】ubuntu仓库本地同步_ubunt rsync mirror_UNI-少林寺武功的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h1><ul>
-<li><p>find 命令是根据<strong>文件</strong>的属性进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等</p>
-</li>
-<li><p>grep 是根据<strong>文件的内容</strong>进行查找，会对文件的每一行按照给定的模式(patter)进行匹配查找</p>
-</li>
-<li><p>which 查看<strong>可执行文件的位置</strong> ，只有设置了环境变量的程序才可以用</p>
-</li>
-<li><p>whereis <strong>寻找特定文件，只能用于查找二进制文件、源代码文件和man手册页</strong></p>
-</li>
-<li><p>locate  <strong>配合数据库查看文件位置</strong> ,详情：locate -h查看帮助信息</p>
-</li>
-</ul>
-<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h4bW9uc3Rvci9hcnRpY2xlL2RldGFpbHMvODA1MDc3Njk=">(119条消息) linux下快速查找文件_linux 查找文件_xxt_困困的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h1><h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h2 id="模板配置"><a href="#模板配置" class="headerlink" title="模板配置"></a>模板配置</h2><h2 id="特殊运算符"><a href="#特殊运算符" class="headerlink" title="特殊运算符"></a>特殊运算符</h2><p>参考：</p>
-<p>[<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vYWFyb25MaW51eC9wLzgzNDAyODEuaHRtbA==">shell]shell 中| &amp;&amp; || () {} 用法以及shell的逻辑与或非 - aaronGao - 博客园 (cnblogs.com)<i class="fa fa-external-link-alt"></i></span></p>
-<h2 id="强引用弱引用"><a href="#强引用弱引用" class="headerlink" title="强引用弱引用"></a>强引用弱引用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;$VAR_NAME”   #用变量值替换，弱引用</span><br><span class="line">echo &#x27;$VAR_NAME’   #变量不会替换，强引用</span><br><span class="line">echo `$VAR_NAME`   #命令执行并返回结果</span><br></pre></td></tr></table></figure>
-
-<h2 id="函数function"><a href="#函数function" class="headerlink" title="函数function"></a>函数function</h2><p>函数function是由若干条shell命令组成的语句块，实现代码重用和模块化编程</p>
-<p>它与shell程序形式上是相似的，不同的是它不是一个单独的进程，不能独立运行，而是shell程序的一部分</p>
-<p><strong>函数和*shell程序区别</strong></p>
-<ul>
-<li><p>Shell程序在子Shell中运行</p>
-</li>
-<li><p>函数在当前Shell中运行。因此在当前Shell中，函数可对shell中变量进行修改</p>
-</li>
-</ul>
-<p>函数由两部分组成：函数名和函数体</p>
-<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a><strong>定义函数</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">语法一：</span></span><br><span class="line">func_name （）&#123;</span><br><span class="line"> ...函数体...</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">语法二：</span></span><br><span class="line">function func_name &#123;</span><br><span class="line"> ...函数体...</span><br><span class="line">&#125; </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">语法三：</span></span><br><span class="line">function func_name （） &#123;</span><br><span class="line"> ...函数体...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看函数"><a href="#查看函数" class="headerlink" title="查看函数"></a>查看函数</h3><p>输出列表包括已经载入shell的所有函数</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看当前已定义的函数名</span></span><br><span class="line"><span class="built_in">declare</span> -F</span><br><span class="line"><span class="comment">#查看当前已定义的函数定义</span></span><br><span class="line"><span class="built_in">declare</span> -f</span><br><span class="line"><span class="comment">#查看指定当前已定义的函数名</span></span><br><span class="line"><span class="built_in">declare</span> -f func_name </span><br><span class="line"><span class="comment">#查看当前已定义的函数名定义</span></span><br><span class="line"><span class="built_in">declare</span> -F func_name</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除函数"><a href="#删除函数" class="headerlink" title="删除函数"></a><strong>删除函数</strong></h3><p>若要改动函数，首先用unset命令从shell中删除函数。改动完毕后，再重新载入此文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unset func_name</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a><strong>函数调用</strong></h3><ul>
-<li><p>交互式调用函数</p>
-</li>
-<li><p>脚本调用</p>
-</li>
-<li><p>单独调用</p>
-</li>
-</ul>
-<p>函数只有被调用才会执行，通过给定函数名调用函数，函数名出现的地方，会被自动替换为函数代码</p>
-<p>函数的生命周期：被调用时创建，返回时终止</p>
-<h4 id="交互式环境调用函数"><a href="#交互式环境调用函数" class="headerlink" title="交互式环境调用函数"></a><strong>交互式环境调用函数</strong></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@centos8 ~]<span class="comment">#dir() &#123;</span></span><br><span class="line">&gt; <span class="built_in">ls</span> -l</span><br><span class="line">&gt; &#125;</span><br><span class="line">[root@centos8 ~]<span class="comment">#dir</span></span><br><span class="line">total 4</span><br><span class="line">-rw-------. 1 root root 1559 Nov  7 19:33 anaconda-ks.cfg</span><br></pre></td></tr></table></figure>
-
-<h4 id="脚本调用"><a href="#脚本调用" class="headerlink" title="脚本调用"></a>脚本调用</h4><p>函数在使用前必须定义，因此应将函数定义放在脚本开始部分，直至shell首次发现它后才能使用，调用函数仅使用其函数名即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@centos8 ~]<span class="comment">#cat func1.sh</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment">#name:func1</span></span><br><span class="line"><span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line"> <span class="built_in">echo</span> <span class="string">&quot;Hello there today&#x27;s date is `date +%F`&quot;</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;now going to the function hello&quot;</span></span><br><span class="line">hello</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;back from the function&quot;</span></span><br><span class="line">[root@centos8 ~]<span class="comment">#. func1.sh </span></span><br><span class="line">now going to the <span class="keyword">function</span> hello</span><br><span class="line">Hello there today<span class="string">&#x27;s date is 2019-12-18</span></span><br><span class="line"><span class="string">back from the function</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="函数文件"><a href="#函数文件" class="headerlink" title="函数文件"></a>函数文件</h4><p>实现函数文件的过程：</p>
-<ol>
-<li><p>创建函数文件，只存放函数的定义</p>
-</li>
-<li><p>在shell脚本或交互式shell中调用函数文件，格式如下：</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">. filename 或 source   filename</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@centos8 ~]<span class="comment">#cat functions</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment">#functions</span></span><br><span class="line"><span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> Run hello Function</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">hello2</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> Run hello2 Function</span><br><span class="line">&#125;</span><br><span class="line">[root@centos8 ~]<span class="comment">#. functions</span></span><br><span class="line">[root@centos8 ~]<span class="comment">#hello</span></span><br><span class="line">Run hello Function</span><br><span class="line">[root@centos8 ~]<span class="comment">#hello2</span></span><br><span class="line">Run hello2 Function</span><br><span class="line">[root@centos8 ~]<span class="comment">#declare -f hello hello2</span></span><br><span class="line"><span class="function"><span class="title">hello</span></span> () </span><br><span class="line">&#123; </span><br><span class="line">    <span class="built_in">echo</span> Run hello Function</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">hello2</span></span> () </span><br><span class="line">&#123; </span><br><span class="line">    <span class="built_in">echo</span> Run hello2 Function</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a><strong>函数参数</strong></h3><p>函数可以接受参数：</p>
-<p>传递参数给函数：在函数名后面以空白分隔给定参数列表即可，如：testfunc arg1 arg2 …</p>
-<p>在函数体中当中，可使用$1, $2, …调用这些参数；还可以使用$@, $*, $#等特殊变量</p>
-<p>实现进度条</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">function print_chars()</span><br><span class="line">&#123;</span><br><span class="line">    # 传入的第一个参数指定要打印的字符串</span><br><span class="line">   local char=&quot;$1&quot;</span><br><span class="line">    # 传入的第二个参数指定要打印多少次指定的字符串</span><br><span class="line">   local number=&quot;$2&quot;</span><br><span class="line">   local c</span><br><span class="line">    for ((c = 0; c &lt; number; ++c)); do</span><br><span class="line">       printf &quot;$char&quot;</span><br><span class="line">    done</span><br><span class="line">&#125;</span><br><span class="line">COLOR=32</span><br><span class="line">declare -i end=50</span><br><span class="line">for ((i = 1; i &lt;= end; ++i)); do</span><br><span class="line">   printf &quot;\e[1;$&#123;COLOR&#125;m\e[80D[&quot;</span><br><span class="line">   print_chars &quot;#&quot; $i</span><br><span class="line">   print_chars &quot; &quot; $((end - i))</span><br><span class="line">   printf &quot;] %3d%%\e[0m&quot; $((i * 2))</span><br><span class="line">    sleep 0.1s</span><br><span class="line">done</span><br><span class="line">echo</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数变量"><a href="#函数变量" class="headerlink" title="函数变量"></a><strong>函数变量</strong></h3><p>变量作用域：</p>
-<ul>
-<li><p>普通变量：只在当前shell进程有效，为执行脚本会启动专用子shell进程；因此，本地变量的作用</p>
-<p>范围是当前shell脚本程序文件，包括脚本中的函数</p>
-</li>
-<li><p>环境变量：当前shell和子shell有效</p>
-</li>
-<li><p>本地变量：函数的生命周期；函数结束时变量被自动销毁</p>
-</li>
-</ul>
-<p>注意：</p>
-<ul>
-<li><p>如果函数中定义了普通变量，且名称和局部变量相同，则使用本地变量</p>
-</li>
-<li><p>由于普通变量和局部变量会冲突，建议在函数中只使用本地变量</p>
-</li>
-</ul>
-<p>在函数中定义本地变量的方法</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">local</span> NAME=VALUE</span><br></pre></td></tr></table></figure>
-
-<h1 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h1><h2 id="交互式转化批处理工具-expect"><a href="#交互式转化批处理工具-expect" class="headerlink" title="交互式转化批处理工具 expect"></a><strong>交互式转化批处理工具</strong> <strong>expect</strong></h2><p>解决远程登陆ssh等应答问题</p>
-<h1 id="远程登陆"><a href="#远程登陆" class="headerlink" title="远程登陆"></a>远程登陆</h1><h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><p>交互式登陆</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh 用户名@地址</span><br></pre></td></tr></table></figure>
-
-<p>非交互式登陆-自动应答-暂定</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>非交互式登陆-交换密钥</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 非交互式生成密钥</span><br><span class="line">ssh-keygen -f ~/.ssh/id_rsa -P &#x27;&#x27; -q -y </span><br><span class="line"># 发送公钥到对应服务器</span><br><span class="line">ssh-copy-id id </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ssh-copy-id zhizcy1003@192.168.158.129</span><br></pre></td></tr></table></figure>
-
-<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kMTExZDZjMzZkOWI=">ssh-keygen非交互式创建秘钥对 - 简书 (jianshu.com)<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="传输文件"><a href="#传输文件" class="headerlink" title="传输文件"></a>传输文件</h1><h2 id="win10与cli"><a href="#win10与cli" class="headerlink" title="win10与cli"></a>win10与cli</h2><p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ5MDQxNC9hcnRpY2xlL2RldGFpbHMvMTIxMjE3MTE2">(119条消息) 超简单的Windows与Linux远程互传文件的方法_insight^tkk的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h1><p>安装防火墙</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install ufw -y</span><br></pre></td></tr></table></figure>
-
-
-
-<p>查看防火墙状态</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure>
-
-
-
-<p>参考：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2OTM4NjE3L2FydGljbGUvZGV0YWlscy85NTIzNDkwOQ==">(119条消息) Ubuntu系统中防火墙的使用和开放端口_ubuntu public port_Aaron_Run的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
-<h1 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h1>]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客搭建</title>
     <url>/2023/04/24/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
     <content><![CDATA[<p><img data-src="https://images.weserv.nl/?url=https://raw.githubusercontent.com/zhizcy1003/typora_image/main/xxx.png&default=https://raw.githubusercontent.com/zhizcy1003/typora_image/main/xxx.png" alt="xxx"></p>
@@ -594,6 +444,156 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>搭建基本Hexo博客</title>
+    <url>/2023/04/18/linux/</url>
+    <content><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="win10内置linux开启-阉割版不推荐"><a href="#win10内置linux开启-阉割版不推荐" class="headerlink" title="win10内置linux开启 -阉割版不推荐"></a>win10内置linux开启 -阉割版不推荐</h2><p>参考<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3d3em12cC9hcnRpY2xlL2RldGFpbHMvMTEzODA3NzY2">(119条消息) Win10内置Linux系统(Ubuntu)的开启及使用_win10 自带ubuntu_wwzmvp的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="虚拟机安装"><a href="#虚拟机安装" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h2><h3 id="vmware"><a href="#vmware" class="headerlink" title="vmware"></a>vmware</h3><h4 id="下载vmware"><a href="#下载vmware" class="headerlink" title="下载vmware"></a>下载vmware</h4><p><span class="exturl" data-url="aHR0cHM6Ly93d3cudm13YXJlLmNvbS9jbi9wcm9kdWN0cy93b3Jrc3RhdGlvbi1wcm8vd29ya3N0YXRpb24tcHJvLWV2YWx1YXRpb24uaHRtbA==">下载 VMware Workstation Pro | CN<i class="fa fa-external-link-alt"></i></span>–下载for windows版本</p>
+<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>略</p>
+<p>许可证：4Y09U-AJK97-089Z0-A3054-83KLA</p>
+<h3 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h3><h4 id="下载Ubuntu"><a href="#下载Ubuntu" class="headerlink" title="下载Ubuntu"></a>下载Ubuntu</h4><p><span class="exturl" data-url="aHR0cDovL21pcnJvcnMudXN0Yy5lZHUuY24v">USTC Open Source Software Mirror<i class="fa fa-external-link-alt"></i></span>-中科大源下载非常快</p>
+<p>下载地址：<span class="exturl" data-url="aHR0cDovL2lzby5taXJyb3JzLnVzdGMuZWR1LmNuL3VidW50dS1yZWxlYXNlcy9mb2NhbC91YnVudHUtMjAuMDQuNi1saXZlLXNlcnZlci1hbWQ2NC5pc28=">iso.mirrors.ustc.edu.cn/ubuntu-releases/focal/ubuntu-20.04.6-live-server-amd64.iso<i class="fa fa-external-link-alt"></i></span></p>
+<h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><p>略</p>
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8zNzA0NTE2ODU=">Vmware workstation 16详细图文安装激活教程！ - 知乎 (zhihu.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaGVsbG9nbXkvcC8xNzI1MzA0MS5odG1s">VMware 17 下载安装及永久激活使用教程 - 嘿笨笨熊 - 博客园 (cnblogs.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p>[VMware Workstation 17 Pro 通用批量许可证密钥 - 邮莓生活 (mailberry.com.cn)](<span class="exturl" data-url="aHR0cHM6Ly9tYWlsYmVycnkuY29tLmNuLzIwMjIvMTEvdm13YXJlLXdvcmtzdGF0aW9uLTE3LXByby1saWNlbnNlLWtleS8jOn46dGV4dD1WTXdhcmU=">https://mailberry.com.cn/2022/11/vmware-workstation-17-pro-license-key/#:~:text=VMware<i class="fa fa-external-link-alt"></i></span> Workstation 17 Pro许可证密钥,JU090-6039P-08409-8J0QH-2YR7F 已失效 4Y09U-AJK97-089Z0-A3054-83KLA 可用)</p>
+<p>[(119条消息) 下载ubuntu系统镜像的国内源地址，超快 国内镜像源（阿里、网易、清华、中科大）_0x8g1T9E的博客-CSDN博客](<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Npcm9ib3QvYXJ0aWNsZS9kZXRhaWxzLzEwNjMwOTMwNSM6fjp0ZXh0PXVidW50dQ==">https://blog.csdn.net/sirobot/article/details/106309305#:~:text=ubuntu<i class="fa fa-external-link-alt"></i></span> 下载 地址—— 国内 高速 镜像源 2387 1、,https%3A%2F%2Fmirrors.ustc.edu.cn%2F ubuntu -releases%2F 源 https%3A%2F%2Fmirrors.tuna.tsinghua.edu.cn%2F ubuntu -releases%2F 北京)</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vbWVmai9wLzE0OTY0NDE2Lmh0bWw=">Ubuntu 20.04 live server版安装(详细版) - 运维密码 - 博客园 (cnblogs.com)<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h1><p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0NzIxODMxL2FydGljbGUvZGV0YWlscy8xMDg4OTMyNDg=">(119条消息) Ubuntu获取root权限_gxhlh的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h1><h2 id="PS1-PS2-PS3-PS4"><a href="#PS1-PS2-PS3-PS4" class="headerlink" title="PS1 PS2 PS3 PS4"></a>PS1 PS2 PS3 PS4</h2><p>参考</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM3MTg3OTc2L2FydGljbGUvZGV0YWlscy83OTI2NzQzMA==">(119条消息) linux下PS1、PS2、PS3、PS4最全详解_linux ps4_咻一咻的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3doaXRlX2lkaW90L2FydGljbGUvZGV0YWlscy83ODI1MzAwNA==">(119条消息) 【Ubuntu】Ubuntu设置和查看环境变量_ubuntu设置环境变量_remo0x的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="软件管理"><a href="#软件管理" class="headerlink" title="软件管理"></a>软件管理</h1><h2 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 更改为中科大源</span><br><span class="line">sudo sed -i.bak &#x27;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#x27; /etc/apt/sources.list</span><br><span class="line"># 更改为阿里源</span><br><span class="line">sudo sed -i.bak &#x27;s/archive.ubuntu.com/mirrors.aliyun.com/g&#x27; /etc/apt/sources.list</span><br><span class="line"># 更新索引</span><br><span class="line">sudo apt update</span><br><span class="line"># 更新软件到索引的最新版本</span><br><span class="line">sudo apt upgrade -y</span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuYWxpeXVuLmNvbS9taXJyb3IvdWJ1bnR1P3NwbT1hMmM2aC4xMzY1MTEwMi4wLjAuM2UyMjFiMTFTMU5MVEM=">ubuntu镜像_ubuntu下载地址_ubuntu安装教程-阿里巴巴开源镜像站 (aliyun.com)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xODgwOTgx">Ubuntu 换源看这一篇就够了 - 腾讯云开发者社区-腾讯云 (tencent.com)<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h2><p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xNDU0NTA5">Ubuntu下安装软件的三种方式 - 腾讯云开发者社区-腾讯云 (tencent.com)<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="配置本地软件源服务器并实现自动拉取"><a href="#配置本地软件源服务器并实现自动拉取" class="headerlink" title="配置本地软件源服务器并实现自动拉取"></a>配置本地软件源服务器并实现自动拉取</h2><p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzM2NTQ0MjkwL2FydGljbGUvZGV0YWlscy8xMDQ2OTA2MjY=">(119条消息) ubuntu下的apt内网本地源的正确搭建_ubuntu14 apt 本地_无名小卒～的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lpa3VuYmFpNTcwOC9hcnRpY2xlL2RldGFpbHMvMTE3MDY4NjA4">(119条消息) 【三】ubuntu仓库本地同步_ubunt rsync mirror_UNI-少林寺武功的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="查找命令"><a href="#查找命令" class="headerlink" title="查找命令"></a>查找命令</h1><ul>
+<li><p>find 命令是根据<strong>文件</strong>的属性进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等</p>
+</li>
+<li><p>grep 是根据<strong>文件的内容</strong>进行查找，会对文件的每一行按照给定的模式(patter)进行匹配查找</p>
+</li>
+<li><p>which 查看<strong>可执行文件的位置</strong> ，只有设置了环境变量的程序才可以用</p>
+</li>
+<li><p>whereis <strong>寻找特定文件，只能用于查找二进制文件、源代码文件和man手册页</strong></p>
+</li>
+<li><p>locate  <strong>配合数据库查看文件位置</strong> ,详情：locate -h查看帮助信息</p>
+</li>
+</ul>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h4bW9uc3Rvci9hcnRpY2xlL2RldGFpbHMvODA1MDc3Njk=">(119条消息) linux下快速查找文件_linux 查找文件_xxt_困困的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h1><h1 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h1><h2 id="模板配置"><a href="#模板配置" class="headerlink" title="模板配置"></a>模板配置</h2><h2 id="特殊运算符"><a href="#特殊运算符" class="headerlink" title="特殊运算符"></a>特殊运算符</h2><p>参考：</p>
+<p>[<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vYWFyb25MaW51eC9wLzgzNDAyODEuaHRtbA==">shell]shell 中| &amp;&amp; || () {} 用法以及shell的逻辑与或非 - aaronGao - 博客园 (cnblogs.com)<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="强引用弱引用"><a href="#强引用弱引用" class="headerlink" title="强引用弱引用"></a>强引用弱引用</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;$VAR_NAME”   #用变量值替换，弱引用</span><br><span class="line">echo &#x27;$VAR_NAME’   #变量不会替换，强引用</span><br><span class="line">echo `$VAR_NAME`   #命令执行并返回结果</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数function"><a href="#函数function" class="headerlink" title="函数function"></a>函数function</h2><p>函数function是由若干条shell命令组成的语句块，实现代码重用和模块化编程</p>
+<p>它与shell程序形式上是相似的，不同的是它不是一个单独的进程，不能独立运行，而是shell程序的一部分</p>
+<p><strong>函数和*shell程序区别</strong></p>
+<ul>
+<li><p>Shell程序在子Shell中运行</p>
+</li>
+<li><p>函数在当前Shell中运行。因此在当前Shell中，函数可对shell中变量进行修改</p>
+</li>
+</ul>
+<p>函数由两部分组成：函数名和函数体</p>
+<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a><strong>定义函数</strong></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">语法一：</span></span><br><span class="line">func_name （）&#123;</span><br><span class="line"> ...函数体...</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">语法二：</span></span><br><span class="line">function func_name &#123;</span><br><span class="line"> ...函数体...</span><br><span class="line">&#125; </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">语法三：</span></span><br><span class="line">function func_name （） &#123;</span><br><span class="line"> ...函数体...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看函数"><a href="#查看函数" class="headerlink" title="查看函数"></a>查看函数</h3><p>输出列表包括已经载入shell的所有函数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看当前已定义的函数名</span></span><br><span class="line"><span class="built_in">declare</span> -F</span><br><span class="line"><span class="comment">#查看当前已定义的函数定义</span></span><br><span class="line"><span class="built_in">declare</span> -f</span><br><span class="line"><span class="comment">#查看指定当前已定义的函数名</span></span><br><span class="line"><span class="built_in">declare</span> -f func_name </span><br><span class="line"><span class="comment">#查看当前已定义的函数名定义</span></span><br><span class="line"><span class="built_in">declare</span> -F func_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除函数"><a href="#删除函数" class="headerlink" title="删除函数"></a><strong>删除函数</strong></h3><p>若要改动函数，首先用unset命令从shell中删除函数。改动完毕后，再重新载入此文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unset func_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a><strong>函数调用</strong></h3><ul>
+<li><p>交互式调用函数</p>
+</li>
+<li><p>脚本调用</p>
+</li>
+<li><p>单独调用</p>
+</li>
+</ul>
+<p>函数只有被调用才会执行，通过给定函数名调用函数，函数名出现的地方，会被自动替换为函数代码</p>
+<p>函数的生命周期：被调用时创建，返回时终止</p>
+<h4 id="交互式环境调用函数"><a href="#交互式环境调用函数" class="headerlink" title="交互式环境调用函数"></a><strong>交互式环境调用函数</strong></h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@centos8 ~]<span class="comment">#dir() &#123;</span></span><br><span class="line">&gt; <span class="built_in">ls</span> -l</span><br><span class="line">&gt; &#125;</span><br><span class="line">[root@centos8 ~]<span class="comment">#dir</span></span><br><span class="line">total 4</span><br><span class="line">-rw-------. 1 root root 1559 Nov  7 19:33 anaconda-ks.cfg</span><br></pre></td></tr></table></figure>
+
+<h4 id="脚本调用"><a href="#脚本调用" class="headerlink" title="脚本调用"></a>脚本调用</h4><p>函数在使用前必须定义，因此应将函数定义放在脚本开始部分，直至shell首次发现它后才能使用，调用函数仅使用其函数名即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@centos8 ~]<span class="comment">#cat func1.sh</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment">#name:func1</span></span><br><span class="line"><span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line"> <span class="built_in">echo</span> <span class="string">&quot;Hello there today&#x27;s date is `date +%F`&quot;</span> </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;now going to the function hello&quot;</span></span><br><span class="line">hello</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;back from the function&quot;</span></span><br><span class="line">[root@centos8 ~]<span class="comment">#. func1.sh </span></span><br><span class="line">now going to the <span class="keyword">function</span> hello</span><br><span class="line">Hello there today<span class="string">&#x27;s date is 2019-12-18</span></span><br><span class="line"><span class="string">back from the function</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数文件"><a href="#函数文件" class="headerlink" title="函数文件"></a>函数文件</h4><p>实现函数文件的过程：</p>
+<ol>
+<li><p>创建函数文件，只存放函数的定义</p>
+</li>
+<li><p>在shell脚本或交互式shell中调用函数文件，格式如下：</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">. filename 或 source   filename</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[root@centos8 ~]<span class="comment">#cat functions</span></span><br><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment">#functions</span></span><br><span class="line"><span class="function"><span class="title">hello</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> Run hello Function</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">hello2</span></span>()&#123;</span><br><span class="line">    <span class="built_in">echo</span> Run hello2 Function</span><br><span class="line">&#125;</span><br><span class="line">[root@centos8 ~]<span class="comment">#. functions</span></span><br><span class="line">[root@centos8 ~]<span class="comment">#hello</span></span><br><span class="line">Run hello Function</span><br><span class="line">[root@centos8 ~]<span class="comment">#hello2</span></span><br><span class="line">Run hello2 Function</span><br><span class="line">[root@centos8 ~]<span class="comment">#declare -f hello hello2</span></span><br><span class="line"><span class="function"><span class="title">hello</span></span> () </span><br><span class="line">&#123; </span><br><span class="line">    <span class="built_in">echo</span> Run hello Function</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="title">hello2</span></span> () </span><br><span class="line">&#123; </span><br><span class="line">    <span class="built_in">echo</span> Run hello2 Function</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a><strong>函数参数</strong></h3><p>函数可以接受参数：</p>
+<p>传递参数给函数：在函数名后面以空白分隔给定参数列表即可，如：testfunc arg1 arg2 …</p>
+<p>在函数体中当中，可使用$1, $2, …调用这些参数；还可以使用$@, $*, $#等特殊变量</p>
+<p>实现进度条</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">function print_chars()</span><br><span class="line">&#123;</span><br><span class="line">    # 传入的第一个参数指定要打印的字符串</span><br><span class="line">   local char=&quot;$1&quot;</span><br><span class="line">    # 传入的第二个参数指定要打印多少次指定的字符串</span><br><span class="line">   local number=&quot;$2&quot;</span><br><span class="line">   local c</span><br><span class="line">    for ((c = 0; c &lt; number; ++c)); do</span><br><span class="line">       printf &quot;$char&quot;</span><br><span class="line">    done</span><br><span class="line">&#125;</span><br><span class="line">COLOR=32</span><br><span class="line">declare -i end=50</span><br><span class="line">for ((i = 1; i &lt;= end; ++i)); do</span><br><span class="line">   printf &quot;\e[1;$&#123;COLOR&#125;m\e[80D[&quot;</span><br><span class="line">   print_chars &quot;#&quot; $i</span><br><span class="line">   print_chars &quot; &quot; $((end - i))</span><br><span class="line">   printf &quot;] %3d%%\e[0m&quot; $((i * 2))</span><br><span class="line">    sleep 0.1s</span><br><span class="line">done</span><br><span class="line">echo</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数变量"><a href="#函数变量" class="headerlink" title="函数变量"></a><strong>函数变量</strong></h3><p>变量作用域：</p>
+<ul>
+<li><p>普通变量：只在当前shell进程有效，为执行脚本会启动专用子shell进程；因此，本地变量的作用</p>
+<p>范围是当前shell脚本程序文件，包括脚本中的函数</p>
+</li>
+<li><p>环境变量：当前shell和子shell有效</p>
+</li>
+<li><p>本地变量：函数的生命周期；函数结束时变量被自动销毁</p>
+</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><p>如果函数中定义了普通变量，且名称和局部变量相同，则使用本地变量</p>
+</li>
+<li><p>由于普通变量和局部变量会冲突，建议在函数中只使用本地变量</p>
+</li>
+</ul>
+<p>在函数中定义本地变量的方法</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">local</span> NAME=VALUE</span><br></pre></td></tr></table></figure>
+
+<h1 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h1><h2 id="交互式转化批处理工具-expect"><a href="#交互式转化批处理工具-expect" class="headerlink" title="交互式转化批处理工具 expect"></a><strong>交互式转化批处理工具</strong> <strong>expect</strong></h2><p>解决远程登陆ssh等应答问题</p>
+<h1 id="远程登陆"><a href="#远程登陆" class="headerlink" title="远程登陆"></a>远程登陆</h1><h2 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h2><p>交互式登陆</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh 用户名@地址</span><br></pre></td></tr></table></figure>
+
+<p>非交互式登陆-自动应答-暂定</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>非交互式登陆-交换密钥</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 非交互式生成密钥</span><br><span class="line">ssh-keygen -f ~/.ssh/id_rsa -P &#x27;&#x27; -q -y </span><br><span class="line"># 发送公钥到对应服务器</span><br><span class="line">ssh-copy-id id </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ssh-copy-id zhizcy1003@192.168.158.129</span><br></pre></td></tr></table></figure>
+
+<p>参考：<span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9kMTExZDZjMzZkOWI=">ssh-keygen非交互式创建秘钥对 - 简书 (jianshu.com)<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="传输文件"><a href="#传输文件" class="headerlink" title="传输文件"></a>传输文件</h1><h2 id="win10与cli"><a href="#win10与cli" class="headerlink" title="win10与cli"></a>win10与cli</h2><p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ5MDQxNC9hcnRpY2xlL2RldGFpbHMvMTIxMjE3MTE2">(119条消息) 超简单的Windows与Linux远程互传文件的方法_insight^tkk的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h1><p>安装防火墙</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt install ufw -y</span><br></pre></td></tr></table></figure>
+
+
+
+<p>查看防火墙状态</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure>
+
+
+
+<p>参考：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2OTM4NjE3L2FydGljbGUvZGV0YWlscy85NTIzNDkwOQ==">(119条消息) Ubuntu系统中防火墙的使用和开放端口_ubuntu public port_Aaron_Run的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h1>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
   <entry>
@@ -2046,6 +2046,11 @@ System.out.println(&quot;b = &quot; + b);
       </tags>
   </entry>
   <entry>
+    <title></title>
+    <url>/2023/04/24/%E5%BA%93/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Hexo-Matery</title>
     <url>/2023/04/18/%E5%AE%B9%E5%99%A8/</url>
     <content><![CDATA[<h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><blockquote>
@@ -2124,6 +2129,25 @@ System.out.println(&quot;b = &quot; + b);
   </entry>
   <entry>
     <title></title>
+    <url>/2023/04/24/%E7%BD%AE%E9%A1%B6%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h1 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h1><p>结构图绘制</p>
+<h2 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h2><p>基础知识-&gt;demo-&gt; 参考</p>
+<h1 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h1>1682288016951 ：干了啥
+
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/24/%E8%AF%AD%E8%A8%80/</url>
+    <content><![CDATA[<h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1>]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/04/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2>]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>/2023/04/24/%E8%84%9A%E6%9C%AC/</url>
     <content><![CDATA[<h1 id="win10下启动多个应用-java实现"><a href="#win10下启动多个应用-java实现" class="headerlink" title="win10下启动多个应用-java实现"></a>win10下启动多个应用-java实现</h1><blockquote>
 <p>ide运行java脚本</p>
@@ -2134,25 +2158,6 @@ System.out.println(&quot;b = &quot; + b);
 <p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpZGlodW8vYXJ0aWNsZS9kZXRhaWxzLzUwMTQzNTU3">(119条消息) java打开指定文件（运行指定程序exe）_四滴火的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM4NDEwNzMwL2FydGljbGUvZGV0YWlscy85MTk5NTg1MQ==">(119条消息) 【JAVA】Win10实现Java文件的开机自启动（附详细步骤）_Yngz_Miao的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E5%BA%93/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E7%BD%AE%E9%A1%B6%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<h1 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h1><p>结构图绘制</p>
-<h2 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h2><p>基础知识-&gt;demo-&gt; 参考</p>
-<h1 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h1>1682288016951 ：干了啥
-
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2>]]></content>
   </entry>
   <entry>
     <title></title>
@@ -2181,10 +2186,5 @@ System.out.println(&quot;b = &quot; + b);
 <p>参考：</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ5MDQxNC9hcnRpY2xlL2RldGFpbHMvMTE3NzUwMDc1">(119条消息) VSCode - 使用VSCode远程连接到Linux并实现免密码登录_vscode远程连接linux_insight^tkk的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h3><h3 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h3><h3 id="语法规范"><a href="#语法规范" class="headerlink" title="语法规范"></a>语法规范</h3>]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2023/04/24/%E8%AF%AD%E8%A8%80/</url>
-    <content><![CDATA[<h1 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a>markdown</h1><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1>]]></content>
   </entry>
 </search>
