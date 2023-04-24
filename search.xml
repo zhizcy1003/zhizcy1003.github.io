@@ -568,6 +568,9 @@
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  - type: <span class="attribute">git</span></span><br><span class="line">    repo: https://github.com/zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">    branch: master</span><br><span class="line">  - type: git</span><br><span class="line">    repo: https://e.coding.net/zhizcy1003/zhizcy1003/zhizcy1003.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 
 <blockquote>
+<p>先用https启用一次密码认证才可以，之后才能换ssh</p>
+</blockquote>
+<blockquote>
 <p>~/.ssh/config</p>
 </blockquote>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># coding</span><br><span class="line">Host coding.com</span><br><span class="line">HostName coding.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_coding  # 指定特定的ssh私钥文件</span><br><span class="line"></span><br><span class="line"># GitHub</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_github  # 指定特定的ssh私钥文件</span><br></pre></td></tr></table></figure>
