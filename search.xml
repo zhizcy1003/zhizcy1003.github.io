@@ -565,7 +565,7 @@
 <blockquote>
 <p>用ssh链接基于公钥，用https基于账号密码</p>
 </blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  - type: <span class="attribute">git</span></span><br><span class="line">    repo: git<span class="variable">@github</span>.com:zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">    branch: master</span><br><span class="line">  - type: git</span><br><span class="line">    repo: git<span class="variable">@e</span>.coding.net:zhizcy1003/zhizcy1003/zhizcy1003.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  - type: <span class="attribute">git</span></span><br><span class="line">    repo: https://github.com/zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">    branch: master</span><br><span class="line">  - type: git</span><br><span class="line">    repo: https://e.coding.net/zhizcy1003/zhizcy1003/zhizcy1003.git</span><br><span class="line">    branch: master</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>~/.ssh/config</p>
