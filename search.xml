@@ -562,7 +562,7 @@
 <blockquote>
 <p>/blog/_config.yml</p>
 </blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type: <span class="attribute">git</span></span><br><span class="line">  repo: https://github.com/zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https://e.coding.net/python-yu/zhizcy1003/zhizcy1003.git</span><br><span class="line">  branch: master</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  - type: <span class="attribute">git</span></span><br><span class="line">    repo: https://github.com/zhizcy1003/zhizcy1003.github.io.git</span><br><span class="line">    branch: master</span><br><span class="line">  - type: git</span><br><span class="line">    repo: https://e.coding.net/python-yu/zhizcy1003/zhizcy1003.git</span><br><span class="line">    branch: master</span><br><span class="line">  </span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>参考：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0Jsb3dNb29ucy9hcnRpY2xlL2RldGFpbHMvMTAwNTQ0NDQ0">(119条消息) Hexo部署到Coding上_乡草的博客-CSDN博客<i class="fa fa-external-link-alt"></i></span></p>
