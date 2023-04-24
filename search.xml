@@ -557,7 +557,7 @@
 <h1 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h1><h2 id="国内coding托管"><a href="#国内coding托管" class="headerlink" title="国内coding托管"></a>国内coding托管</h2><h3 id="线上配置"><a href="#线上配置" class="headerlink" title="线上配置"></a>线上配置</h3><h3 id="线下配置"><a href="#线下配置" class="headerlink" title="线下配置"></a>线下配置</h3><blockquote>
 <p>验证公钥</p>
 </blockquote>
-<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@e</span>.coding.net</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@e</span>.coding.net  <span class="comment"># 如果一次密码输错了，再执行一次这个即可</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>/blog/_config.yml</p>
@@ -573,7 +573,7 @@
 <blockquote>
 <p>~/.ssh/config</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># coding</span><br><span class="line">Host coding.com</span><br><span class="line">HostName coding.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_coding  # 指定特定的ssh私钥文件</span><br><span class="line"></span><br><span class="line"># GitHub</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_github  # 指定特定的ssh私钥文件</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># coding</span></span><br><span class="line"><span class="attribute">Host</span> coding.com</span><br><span class="line">HostName coding.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_coding  <span class="comment"># 指定特定的ssh私钥文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># GitHub</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_github  <span class="comment"># 指定特定的ssh私钥文件</span></span><br></pre></td></tr></table></figure>
 
 
 
